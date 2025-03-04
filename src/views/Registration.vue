@@ -20,7 +20,7 @@ import RegistrationBtn from '@/components/RegistrationBtn.vue'
           Ready to <span>Join Us</span> ?
         </h2>
 
-        <p class="font-[Monda] font-light text-gray-500 lg:mb-8 sm:text-xl dark:text-gray-400">
+        <p class="font-[Monda] font-light text-gray-500 lg:mb-8 sm:text-xl dark:text-white">
           Be part of the action by registering for the TAG Convention. Will you be an attendee,
           exhibitor, or sponsor, we have a place for everyone!
         </p>
