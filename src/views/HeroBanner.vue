@@ -10,7 +10,7 @@ import CtaBtn from '@/components/CtaBtn.vue'
     <div class="child-container">
       <div class="title-container">
         <span class="animate__slideInDown" id="title">TAG CON 2025</span>
-        <img src="../../public/images/Hero-image.png" alt="A guy wearing a VR Headset" srcset="" />
+        <img src="../../public/images/Hero-image.webp" alt="A guy wearing a VR Headset" srcset="" />
       </div>
       <div class="cta-container">
         <div class="top">

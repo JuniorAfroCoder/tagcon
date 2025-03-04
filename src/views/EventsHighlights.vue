@@ -1,11 +1,11 @@
 <script setup>
 import EventCard from '@/components/EventCard.vue'
 const urls = [
-  '../../public/images/exhibition.jpg',
-  '../../public/images/bigscreen-anime.jpg',
-  '../../public/images/food-and-beverage.jpg',
-  '../../public/images/gaming-tournament.jpg',
-  '../../public/images/panel-discussion.jpg',
+  '../../public/images/exhibition.webp',
+  '../../public/images/bigscreen-anime.webp',
+  '../../public/images/food-and-beverage.webp',
+  '../../public/images/gaming-tournament.webp',
+  '../../public/images/panel-discussion.webp',
 ]
 </script>
 
