@@ -1,0 +1,41 @@
+@import './base.css';
+@import 'tailwindcss';
+@import 'animate.css';
+
+body {
+  background: black;
+}
+
+@font-face {
+  font-family: 'Monda';
+  font-style: normal;
+  font-weight: bold;
+  font-display: block;
+  unicode-range: U+000-5FF;
+  src: url('/fonts/Monda/Monda-Bold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Azo Sans';
+  font-style: normal;
+  font-weight: black;
+  font-display: block;
+  unicode-range: U+000-5FF;
+  src: url('/fonts/Azo/AzoSansTest-Black.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Muller';
+  font-style: normal;
+  font-display: block;
+  unicode-range: U+000-5FF;
+  src: url('/fonts/Muller/Muller-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  font-style: normal;
+  font-display: block;
+  unicode-range: U+000-5FF;
+  src: url('/fonts/Avenir Next/AvenirNextLTPro-HeavyCn.otf') format('opentype');
+}

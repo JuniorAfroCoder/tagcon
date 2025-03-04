@@ -1,0 +1,32 @@
+<script setup>
+defineProps(['message'])
+</script>
+
+<template>
+  <a
+    class="group relative inline-flex items-center overflow-hidden rounded-sm border border-current bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
+    href="#"
+  >
+    <span class="absolute -end-full transition-all group-hover:end-4">
+      <svg
+        class="size-5 rtl:rotate-180"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M17 8l4 4m0 0l-4 4m4-4H3"
+        />
+      </svg>
+    </span>
+    <span
+      class="font-[Monda] font-bold w-full rounded-xs bg-white px-8 py-3 text-sm group-hover:bg-transparent"
+    >
+      {{ message }}
+    </span>
+  </a>
+</template>
