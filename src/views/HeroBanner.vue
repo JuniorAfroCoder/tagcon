@@ -22,7 +22,7 @@ import CtaBtn from '@/components/CtaBtn.vue'
         </div>
         <div class="bottom">
           <div class="font-[Avenir_Next_Roman]">
-            <p>In</p>
+            <p class="text-center">In</p>
             <div class="py-4">
               <Countdown labelColor="white" deadline="2025-06-06 00:00:00" />
             </div>
