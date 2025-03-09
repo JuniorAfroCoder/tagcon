@@ -1,11 +1,11 @@
 <script setup>
-defineProps(['btnMessage'])
+defineProps(['btnMessage', 'url'])
 </script>
 
 <template>
   <a
-    class="group inline-block rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
-    href="#"
+    class="group block rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
+    :href="url"
   >
     <span
       class="block rounded-full text-white bg-black px-3 py-3 text-sm font-medium hover:text-white group-hover:bg-transparent"
@@ -30,7 +30,7 @@ defineProps(['btnMessage'])
 
 <style scoped>
 a:hover {
-  background: linear-gradient(45deg, #bb1900, #fd6f01, #ffb000);
+  background: linear-gradient(45deg, #a8000b, #d34202, #f91622);
 }
 
 span {

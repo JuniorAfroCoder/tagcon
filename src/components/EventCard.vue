@@ -1,5 +1,9 @@
 <script setup>
-defineProps(['eventType', 'description', 'url'])
+const props = defineProps({
+  eventType: String,
+  description: String,
+  url: String, // Explicitly declared prop for the image URL
+})
 </script>
 
 <template>
@@ -7,19 +11,21 @@ defineProps(['eventType', 'description', 'url'])
     <a href="#" class="group relative block bg-black">
       <img
         alt=""
-        :src="url"
+        :src="props.url"
         class="absolute inset-0 w-full h-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
       />
 
       <div class="relative p-4 sm:p-6 lg:p-8">
-        <p class="font-[Avenir_Next] text-xl font-bold text-white sm:text-2xl">{{ eventType }}</p>
+        <p class="font-[African_Culture] uppercase text-xl font-bold text-white sm:text-2xl">
+          {{ props.eventType }}
+        </p>
 
-        <div class="mt-32 sm:mt-48 lg:mt-64">
+        <div class="mt-22 sm:mt-32 lg:mt-36">
           <div
             class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
           >
-            <p class="font-[Monda] text-xl text-white">
-              {{ description }}
+            <p class="font-[Avenir_Next_Roman] text-xl text-white">
+              {{ props.description }}
             </p>
           </div>
         </div>

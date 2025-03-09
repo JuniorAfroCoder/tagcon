@@ -4,23 +4,26 @@ import RegistrationBtn from '@/components/RegistrationBtn.vue'
 
 <template>
   <!--
-    Heads up! 👋
+    Heads up! 
   
-    This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
+    This component comes with some `rtl` classes. Please remove them if they are not needed.
   -->
 
   <section
-    class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 overflow-hidden bg-black sm:grid sm:grid-cols-2 sm:items-center"
+    id="registration"
+    class="bg-[#212121] py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 overflow-hidden sm:grid sm:grid-cols-2 sm:items-center"
   >
     <div class="p-8 md:p-12 lg:px-16 lg:py-24">
       <div class="mx-auto max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
         <h2
-          class="font-[Azo_Sans] uppercase text-3xl font-bold text-white md:text-5xl dark:text-white"
+          class="font-[Recharge] uppercase text-3xl font-bold text-white md:text-5xl dark:text-white"
         >
           Ready to <span>Join Us</span> ?
         </h2>
 
-        <p class="font-[Monda] font-light text-gray-500 lg:mb-8 sm:text-xl dark:text-white">
+        <p
+          class="font-[Avenir_Next_Roman] font-light text-gray-500 lg:mb-8 sm:text-xl dark:text-white"
+        >
           Be part of the action by registering for the TAG Convention. Will you be an attendee,
           exhibitor, or sponsor, we have a place for everyone!
         </p>

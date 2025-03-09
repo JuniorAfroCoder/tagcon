@@ -1,4 +1,5 @@
 <script setup>
+import { Countdown } from 'vue3-flip-countdown'
 import NavMenu from '../components/NavMenu.vue'
 import CtaBtn from '@/components/CtaBtn.vue'
 </script>
@@ -6,7 +7,7 @@ import CtaBtn from '@/components/CtaBtn.vue'
 <template>
   <NavMenu />
 
-  <div class="py-13 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+  <div class="bg-[#212121] py-13 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="child-container">
       <div class="title-container">
         <span class="animate__slideInDown" id="title">TAG CON 2025</span>
@@ -20,14 +21,18 @@ import CtaBtn from '@/components/CtaBtn.vue'
           </p>
         </div>
         <div class="bottom">
-          <div class="text">
-            <p>June 6, 2025</p>
-            <p>we are rocking Burundi with a unique of its kind event!"</p>
+          <div class="font-[Avenir_Next_Roman]">
+            <p>In</p>
+            <div class="py-4">
+              <Countdown labelColor="white" deadline="2025-06-06 00:00:00" />
+            </div>
+            <p>we are rocking Burundi with a unique of its kind event!</p>
           </div>
 
           <div class="buttons">
             <CtaBtn btnMessage="Register Now" />
             <CtaBtn btnMessage="Sponsor Us" />
+            <CtaBtn btnMessage="Volunteer" />
           </div>
         </div>
       </div>
@@ -53,36 +58,41 @@ import CtaBtn from '@/components/CtaBtn.vue'
 }
 
 .title-container {
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
 }
 
-.top {
-  display: flex;
-  font-family: 'Azo Sans', 'Muller', sans-serif;
-  font-size: 2rem;
+.top p {
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  font-family: 'Recharge', sans-serif;
   text-transform: uppercase;
   line-height: normal;
-  align-items: center;
+  text-align: start;
 }
 
 .bottom {
-  font-family: 'Monda', sans-serif;
+  font-family: 'Recharge', sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.375rem);
 }
 
 .buttons {
-  display: flex;
+  font-family: 'Avenir Next Roman', sans-serif;
+  display: grid;
   justify-content: center;
   margin-top: 2rem;
-  gap: 4rem;
+  gap: 1rem;
 }
 
 #title {
-  position: absolute;
-  font-family: 'Muller', sans-serif;
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  /* position: absolute; */
+  padding-top: 1rem;
+  font-family: 'Recharge', sans-serif;
+  font-size: clamp(1rem, 50vw, 3rem);
   font-weight: bold;
   line-height: normal;
+  text-align: center;
 }
 span {
   color: #ff5722;
@@ -95,11 +105,18 @@ span {
   .child-container {
     flex-direction: row;
   }
-
+  .cta-container {
+    margin-top: 2.2rem;
+  }
   .top {
     margin-top: 2vh;
     flex: 3;
     font-size: 3.75rem;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
   }
 }
 </style>

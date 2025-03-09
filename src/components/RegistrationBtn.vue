@@ -24,7 +24,7 @@ defineProps(['message'])
       </svg>
     </span>
     <span
-      class="font-[Monda] font-bold w-full rounded-xs bg-white px-8 py-3 text-sm group-hover:bg-transparent"
+      class="font-[Avenir_Next_Roman] w-full rounded-xs bg-white px-8 py-3 text-sm group-hover:bg-transparent"
     >
       {{ message }}
     </span>

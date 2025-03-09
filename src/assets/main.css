@@ -2,8 +2,12 @@
 @import 'tailwindcss';
 @import 'animate.css';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: black;
+  background: #212121;
 }
 
 @font-face {
@@ -38,4 +42,28 @@ body {
   font-display: block;
   unicode-range: U+000-5FF;
   src: url('/fonts/Avenir Next/AvenirNextLTPro-HeavyCn.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Avenir Next Roman';
+  font-style: normal;
+  font-display: block;
+  unicode-range: U+000-5FF;
+  src: url('/fonts/Avenir Next/AvenirLTProRoman.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'African Culture';
+  font-style: normal;
+  font-display: block;
+  unicode-range: U+000-5FF;
+  src: url('/fonts/African Culture/AfricanCulture-J17a.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Recharge';
+  font-style: normal;
+  font-display: block;
+  unicode-range: U+000-5FF;
+  src: url('/fonts/Recharge/Recharge Bd.otf') format('opentype');
 }

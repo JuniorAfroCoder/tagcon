@@ -1,5 +1,5 @@
 <template>
-  <div class="container py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+  <div id="about" class="container py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="image-container">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -44,8 +44,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 10rem;
-  background-color: black;
+  gap: 4rem;
+  background-color: #212121;
   color: white;
   position: relative;
   z-index: -20;
@@ -53,9 +53,6 @@
 }
 
 #image {
-  position: absolute;
-  top: 2rem;
-  z-index: -10;
   max-width: 100%;
   height: auto;
 }
@@ -67,14 +64,14 @@
   gap: 2rem;
 }
 #title {
-  font-family: 'Azo Sans', 'Muller', sans-serif;
+  font-family: 'Recharge', 'Muller', sans-serif;
   font-size: 2rem;
   text-transform: uppercase;
   line-height: normal;
 }
 
 #info-text {
-  font-family: 'Monda', sans-serif;
+  font-family: 'Avenir Next Roman', sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.375rem);
   text-align: start;
 }
@@ -99,8 +96,6 @@ span {
   }
 
   #title {
-    position: relative;
-    left: 10rem;
     font-size: 3rem;
   }
   #image {
