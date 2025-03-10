@@ -10,14 +10,21 @@ import CtaBtn from '@/components/CtaBtn.vue'
   <div class="bg-[#212121] py-13 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="child-container">
       <div class="title-container">
-        <span class="animate__slideInDown" id="title">TAG CON 2025</span>
+        <span
+          class="title absolute mx-auto flex border w-fit bg-[#f91622] blur-xl bg-clip-text box-content font-extrabold text-transparent text-center select-none"
+        >
+          TAG CON 2025
+        </span>
+        <span class="title bg-[#f91622] items-center bg-clip-text text-transparent"
+          >TAG CON 2025</span
+        >
         <img src="../../public/images/Hero-image.webp" alt="A guy wearing a VR Headset" srcset="" />
       </div>
       <div class="cta-container">
         <div class="top">
           <p>
             The Technology, Animation, and Gaming
-            <span>Convention </span>!
+            <span class="text-[#ff5722]">Convention </span>!
           </p>
         </div>
         <div class="bottom">
@@ -30,17 +37,56 @@ import CtaBtn from '@/components/CtaBtn.vue'
           </div>
 
           <div class="buttons">
-            <CtaBtn btnMessage="Register Now" />
-            <CtaBtn btnMessage="Sponsor Us" />
-            <CtaBtn btnMessage="Volunteer" />
+            <CtaBtn btnMessage="Register Now" url="#registration" />
+            <CtaBtn btnMessage="Sponsor Us" url="#registration" />
+            <CtaBtn btnMessage="Volunteer" url="#registration" />
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="down-arrow"></div>
 </template>
 
 <style scoped>
+.down-arrow {
+  color: white;
+  position: absolute;
+  top: calc(100vh - 80px);
+  left: calc(50% - 14px);
+  width: 0;
+  height: 30px;
+  border: 2px solid;
+  border-radius: 2px;
+  animation: jumpInfinite 1.5s infinite;
+}
+
+.down-arrow:after {
+  content: ' ';
+  position: absolute;
+  color: white;
+  top: 12px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  border-bottom: 4px solid;
+  border-right: 4px solid;
+  border-radius: 4px;
+  transform: rotateZ(45deg);
+}
+
+@keyframes jumpInfinite {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 20px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
 .child-container {
   height: 100%;
   display: flex;
@@ -69,12 +115,14 @@ import CtaBtn from '@/components/CtaBtn.vue'
   font-family: 'Recharge', sans-serif;
   text-transform: uppercase;
   line-height: normal;
-  text-align: start;
+  text-align: center;
 }
 
 .bottom {
+  padding-top: 1rem;
   font-family: 'Recharge', sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.375rem);
+  text-align: center;
 }
 
 .buttons {
@@ -85,7 +133,7 @@ import CtaBtn from '@/components/CtaBtn.vue'
   gap: 1rem;
 }
 
-#title {
+.title {
   /* position: absolute; */
   padding-top: 1rem;
   font-family: 'Recharge', sans-serif;
@@ -93,9 +141,6 @@ import CtaBtn from '@/components/CtaBtn.vue'
   font-weight: bold;
   line-height: normal;
   text-align: center;
-}
-span {
-  color: #ff5722;
 }
 
 @media screen and (min-width: 770px) {
@@ -109,9 +154,12 @@ span {
     margin-top: 2.2rem;
   }
   .top {
-    margin-top: 2vh;
+    margin-top: 3rem;
     flex: 3;
     font-size: 3.75rem;
+  }
+  .bottom {
+    padding-top: 0;
   }
   .buttons {
     display: flex;

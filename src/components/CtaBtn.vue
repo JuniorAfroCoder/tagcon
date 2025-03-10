@@ -4,11 +4,11 @@ defineProps(['btnMessage', 'url'])
 
 <template>
   <a
-    class="group block rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
+    class="group block rounded-full bg-gradient-to-r from-[#a8000b] to-[#f91622] p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
     :href="url"
   >
     <span
-      class="block rounded-full text-white bg-black px-3 py-3 text-sm font-medium hover:text-white group-hover:bg-transparent"
+      class="flex flex-row justify-between rounded-full text-white bg-black px-3 py-3 text-sm font-medium hover:text-white group-hover:bg-transparent"
     >
       {{ btnMessage }}
       <svg
@@ -30,7 +30,8 @@ defineProps(['btnMessage', 'url'])
 
 <style scoped>
 a:hover {
-  background: linear-gradient(45deg, #a8000b, #d34202, #f91622);
+  background: rgb(168, 0, 11);
+  background: linear-gradient(90deg, rgba(168, 0, 11, 1) 0%, rgba(249, 22, 34, 1) 100%);
 }
 
 span {

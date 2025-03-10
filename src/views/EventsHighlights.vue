@@ -10,12 +10,12 @@ import EventCard from '@/components/EventCard.vue'
     <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
       <div class="grid grid-rows-2 rounded-lg bg-dark">
         <EventCard
-          url="../../public/images/exhibition.webp"
+          url="../../public/images/exhibition.jpg"
           eventType="Interactive Exhibitions"
           description="Explore cutting-edge technologies and innovative solutions by Burundian startups."
         />
         <EventCard
-          url="../../public/images/bigscreen-anime.webp"
+          url="../../public/images/bigscreen-anime.jpg"
           eventType="Anime Screenings"
           description="Explore popular Japanese animations through dedicated movie-moments"
         />
@@ -29,7 +29,7 @@ import EventCard from '@/components/EventCard.vue'
         </div>
         <div class="image-container lg:w-1/2 h-full">
           <EventCard
-            url="../../public/images/food-and-beverage.webp"
+            url="../../public/images/food-and-beverage.jpg"
             eventType="Food and drink stalls"
             description="Come taste the variety of food from different cultures and drinks of all kinds"
           />
@@ -37,12 +37,12 @@ import EventCard from '@/components/EventCard.vue'
       </div>
       <div class="grid grid-rows-2 rounded-lg bg-dark">
         <EventCard
-          url="../../public/images/gaming-tournament.webp"
+          url="../../public/images/gaming-tournament.jpg"
           eventType="Gaming Tournaments"
           description="Participate in competitive gaming events for amateurs and pros alike"
         />
         <EventCard
-          url="../../public/images/panel-discussion.webp"
+          url="../../public/images/panel-discussion.jpg"
           eventType="Panel Discussions"
           description="Hear from industry experts in technology, gaming, and animation worldwide"
         />

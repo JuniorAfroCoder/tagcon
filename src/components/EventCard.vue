@@ -1,17 +1,20 @@
 <script setup>
+import { ref } from 'vue'
 const props = defineProps({
   eventType: String,
   description: String,
   url: String, // Explicitly declared prop for the image URL
 })
+const isTextVisible = ref(false)
 </script>
 
 <template>
   <div class="card">
-    <a href="#" class="group relative block bg-black">
+    <a @click="isTextVisible = !isTextVisible" class="group relative block bg-black">
       <img
         alt=""
         :src="props.url"
+        :class="{ 'opacity-50': isTextVisible }"
         class="absolute inset-0 w-full h-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
       />
 
@@ -22,7 +25,13 @@ const props = defineProps({
 
         <div class="mt-22 sm:mt-32 lg:mt-36">
           <div
-            class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+            :class="{
+              'translate-y-0': isTextVisible,
+              'opacity-100': isTextVisible,
+              'translate-y-8': !isTextVisible,
+              'opacity-0': !isTextVisible,
+            }"
+            class="transform transition-all group-hover:translate-y-0 group-hover:opacity-100"
           >
             <p class="font-[Avenir_Next_Roman] text-xl text-white">
               {{ props.description }}

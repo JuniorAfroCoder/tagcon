@@ -2,33 +2,9 @@
 import { ref } from 'vue'
 import CtaBtn from './CtaBtn.vue'
 
-// Reactive state for menu visibility
-const isOpen = ref(false)
-
-// Toggle menu function
-const toggleMenu = () => {
-  isOpen.value = !isOpen.value
-}
-
-// Close menu function
-const closeMenu = () => {
-  isOpen.value = false
-}
-
-// Click-outside directive
-const vClickOutside = {
-  mounted(el, binding) {
-    el.clickOutsideEvent = function (event) {
-      if (!(el === event.target || el.contains(event.target))) {
-        binding.value(event)
-      }
-    }
-    document.body.addEventListener('click', el.clickOutsideEvent)
-  },
-  unmounted(el) {
-    document.body.removeEventListener('click', el.clickOutsideEvent)
-  },
-}
+const isHidden = ref(true)
+const hidden = !isHidden
+const isOpen = ref(hidden)
 </script>
 
 <template>
@@ -85,7 +61,7 @@ const vClickOutside = {
                   class="text-white transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
                   href="#sponsorships"
                 >
-                  Parternships
+                  Partnerships
                 </a>
               </li>
 
@@ -117,10 +93,11 @@ const vClickOutside = {
 
           <div class="block md:hidden">
             <button
-              @click="toggleMenu"
+              @click="isHidden = !isHidden"
               class="rounded-sm p-2 text-white transition hover:text-gray-600/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75"
             >
               <svg
+                :class="{ hidden: !isHidden }"
                 xmlns="http://www.w3.org/2000/svg"
                 class="size-5"
                 fill="none"
@@ -130,39 +107,72 @@ const vClickOutside = {
               >
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
+
+              <svg
+                :class="{ hidden: isHidden }"
+                class="size-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
             </button>
           </div>
-          <!-- Mobile dropdown menu -->
-          <transition
-            enter-active-class="transition ease-out duration-200"
-            enter-from-class="opacity-0 -translate-y-2"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition ease-in duration-150"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-2"
-          >
-            <div
-              v-show="isOpen"
-              class="md:hidden absolute w-full bg-[#212121] dark:bg-gray-900"
-              v-click-outside="closeMenu"
-            >
-              <nav aria-label="Mobile navigation">
-                <ul class="px-4 py-2 space-y-4">
-                  <li>
-                    <a href="#about" class="block py-2 text-white hover:text-gray-400">About</a>
-                  </li>
-                  <li>
-                    <a href="#about" class="block py-2 text-white hover:text-gray-400">Home</a>
-                  </li>
-                  <li>
-                    <a href="#about" class="block py-2 text-white hover:text-gray-400">About</a>
-                  </li>
-                  <!-- Repeat for other menu items -->
-                </ul>
-              </nav>
-            </div>
-          </transition>
         </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div :class="{ hidden: isHidden }" id="mobile-menu">
+      <div class="space-y-1 px-2 pt-2 pb-3">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a
+          @click="isHidden = !isHidden"
+          href="#"
+          class="block font-[Avenir_Next_Roman] rounded-md bg-[#383838] px-3 py-2 text-base font-medium text-white"
+          aria-current="page"
+          >Home</a
+        >
+        <a
+          @click="isHidden = !isHidden"
+          href="#about"
+          class="block font-[Avenir_Next_Roman] rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >About</a
+        >
+        <a
+          @click="isHidden = !isHidden"
+          href="#eventsHighlights"
+          class="block font-[Avenir_Next_Roman] rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >Events</a
+        >
+        <a
+          @click="isHidden = !isHidden"
+          href="#registration"
+          class="block font-[Avenir_Next_Roman] rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >Registration</a
+        >
+        <a
+          @click="isHidden = !isHidden"
+          href="#sponsorships"
+          class="block font-[Avenir_Next_Roman] rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >Partnerships</a
+        >
+        <a
+          @click="isHidden = !isHidden"
+          href="#team"
+          class="block font-[Avenir_Next_Roman] rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >Team</a
+        >
+        <a
+          @click="isHidden = !isHidden"
+          href="#contact"
+          class="block font-[Avenir_Next_Roman] rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >Contact</a
+        >
       </div>
     </div>
   </header>
@@ -178,6 +188,6 @@ a {
 }
 
 a:hover {
-  color: #ff5722;
+  color: #a8000b;
 }
 </style>

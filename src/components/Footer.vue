@@ -16,7 +16,7 @@
         <li>
           <a
             class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-            href="#"
+            href="#about"
           >
             About
           </a>
@@ -25,7 +25,7 @@
         <li>
           <a
             class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-            href="#"
+            href="#eventsHighlights"
           >
             Events
           </a>
@@ -34,7 +34,7 @@
         <li>
           <a
             class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-            href="#"
+            href="#registration"
           >
             Registration
           </a>
@@ -43,16 +43,16 @@
         <li>
           <a
             class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-            href="#"
+            href="#sponsorships"
           >
-            Parternships
+            Partnerships
           </a>
         </li>
 
         <li>
           <a
             class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-            href="#"
+            href="#team"
           >
             Team
           </a>
@@ -61,7 +61,7 @@
         <li>
           <a
             class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-            href="#"
+            href="#contact"
           >
             Contact
           </a>
@@ -71,7 +71,7 @@
       <ul class="mt-12 flex justify-center gap-6 md:gap-8">
         <li>
           <a
-            href="#"
+            href="https://www.facebook.com/nuyu.agency/"
             rel="noreferrer"
             target="_blank"
             class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
@@ -89,7 +89,7 @@
 
         <li>
           <a
-            href="#"
+            href="https://www.instagram.com/nuyu_agency/"
             rel="noreferrer"
             target="_blank"
             class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
@@ -107,7 +107,7 @@
 
         <li>
           <a
-            href="#"
+            href="https://x.com/Nuyu_Agency"
             rel="noreferrer"
             target="_blank"
             class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"

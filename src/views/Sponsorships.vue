@@ -22,7 +22,7 @@ import Slider from '@/components/Slider.vue'
 
         <div class="mt-8 flex flex-wrap justify-center gap-4">
           <a
-            class="group inline-block rounded-sm bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
+            class="group inline-block rounded-sm bg-gradient-to-r from-[#a8000b] to-[#f91622] p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
             href="#"
           >
             <span
@@ -33,7 +33,7 @@ import Slider from '@/components/Slider.vue'
           </a>
 
           <a
-            class="group inline-block rounded-sm bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
+            class="group inline-block rounded-sm bg-gradient-to-r from-[#a8000b] to-[#f91622] p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
             href="#"
           >
             <span

@@ -1,6 +1,6 @@
 <template>
   <div id="contact" class="bg-[#212121] py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-    <div class="grid grid-cols-1 md:grid-cols-12 border">
+    <div class="grid grid-cols-1 md:grid-cols-12">
       <div class="bg-[#383838] md:col-span-4 p-10 text-white">
         <p class="font-[African_Culture] mt-4 text-sm leading-7 uppercase">Have Questions ?</p>
         <h3 class="font-[Recharge] text-2xl sm:text-5xl leading-none tracking-tight">
@@ -118,7 +118,7 @@
           <span class="font-[Avenir_Next_Roman] text-md">tagconvention@gmail.com</span>
         </div>
       </div>
-      <form class="md:col-span-8 p-10">
+      <form class="font-[Avenir_Next_Roman] md:col-span-8 p-10">
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
@@ -128,12 +128,12 @@
               First Name
             </label>
             <input
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-first-name"
               type="text"
               placeholder="Jane"
+              required
             />
-            <p class="text-orange-500 text-xs italic">Please fill out this field.</p>
           </div>
           <div class="w-full md:w-1/2 px-3">
             <label
@@ -147,6 +147,7 @@
               id="grid-last-name"
               type="text"
               placeholder="Doe"
+              required
             />
           </div>
         </div>
@@ -163,6 +164,7 @@
               id="grid-email"
               type="email"
               placeholder="********@*****.**"
+              required
             />
           </div>
         </div>
@@ -172,6 +174,7 @@
             <label
               class="block uppercase tracking-wide text-white text-xs font-bold mb-2 dark:text-white"
               for="grid-password"
+              required
             >
               Your Message
             </label>
@@ -182,7 +185,7 @@
           </div>
           <div class="flex justify-end w-full mt-3 px-3">
             <button
-              class="font-[Monda] shadow bg-orange-600 hover:bg-orange-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
+              class="shadow bg-orange-600 hover:bg-orange-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
               type="submit"
             >
               Send Us A Message
