@@ -3,7 +3,7 @@ import { ref } from 'vue'
 const props = defineProps({
   eventType: String,
   description: String,
-  url: String, // Explicitly declared prop for the image URL
+  imageurl: String, // Explicitly declared prop for the image URL
 })
 const isTextVisible = ref(false)
 </script>
@@ -13,7 +13,7 @@ const isTextVisible = ref(false)
     <a @click="isTextVisible = !isTextVisible" class="group relative block bg-black">
       <img
         alt=""
-        :src="props.url"
+        :src="props.imageurl"
         :class="{ 'opacity-50': isTextVisible }"
         class="absolute inset-0 w-full h-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
       />
