@@ -10,11 +10,6 @@ import CtaBtn from '@/components/CtaBtn.vue'
   <div class="bg-[#212121] py-13 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="child-container">
       <div class="title-container">
-        <span
-          class="title absolute mx-auto flex border w-fit bg-[#f91622] blur-xl bg-clip-text box-content font-extrabold text-transparent text-center select-none"
-        >
-          TAG CON 2025
-        </span>
         <span class="title bg-[#f91622] items-center bg-clip-text text-transparent"
           >TAG CON 2025</span
         >
@@ -45,7 +40,7 @@ import CtaBtn from '@/components/CtaBtn.vue'
       </div>
     </div>
   </div>
-  <div class="down-arrow"></div>
+  <div class="down-arrow hidden lg:block"></div>
 </template>
 
 <style scoped>
@@ -159,7 +154,7 @@ import CtaBtn from '@/components/CtaBtn.vue'
     font-size: 3.75rem;
   }
   .bottom {
-    padding-top: 0;
+    padding-top: 1rem;
   }
   .buttons {
     display: flex;
