@@ -24,7 +24,7 @@ const formVisible = ref(true)
         </h2>
 
         <p
-          class="font-[Avenir_Next_Roman] font-light mt-4 text-gray-500 lg:mb-8 sm:text-xl dark:text-white"
+          class="font-[Avenir_Next_Roman] font-light mt-4 text-gray-400 lg:mb-8 sm:text-xl dark:text-white"
         >
           Be part of the action by registering for the TAG Convention. Will you be an attendee,
           exhibitor, or sponsor, we have a place for everyone!
@@ -36,7 +36,7 @@ const formVisible = ref(true)
               <button
                 @click="formVisible = !formVisible"
                 type="button"
-                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-3 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 gap-3"
                 data-accordion-target="#accordion-collapse-body-1"
                 aria-expanded="true"
                 aria-controls="accordion-collapse-body-1"
@@ -44,7 +44,7 @@ const formVisible = ref(true)
                 <span class="text-white">Register as Exhibitor</span>
                 <svg
                   data-accordion-icon
-                  class="w-3 h-3 rotate-180 shrink-0"
+                  class="text-white w-3 h-3 rotate-180 shrink-0"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -72,14 +72,9 @@ const formVisible = ref(true)
                       name="floating_name"
                       id="floating_name"
                       class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
-                      placeholder=" "
+                      placeholder="Contact Full Name"
                       required
                     />
-                    <label
-                      for="floating_name"
-                      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-orange-500 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                      >Contact Name</label
-                    >
                   </div>
                   <div class="relative z-0 w-full mb-5 group">
                     <input
@@ -87,14 +82,9 @@ const formVisible = ref(true)
                       name="floating_email"
                       id="floating_email"
                       class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
-                      placeholder=" "
+                      placeholder="Email"
                       required
                     />
-                    <label
-                      for="floating_email"
-                      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-orange-500 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                      >Email Address</label
-                    >
                   </div>
 
                   <div class="grid md:grid-cols-2 md:gap-6">
@@ -104,14 +94,9 @@ const formVisible = ref(true)
                         name="floating_company"
                         id="floating_company"
                         class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
-                        placeholder=" "
+                        placeholder="Company Name"
                         required
                       />
-                      <label
-                        for="floating_company"
-                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-orange-600 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                        >Company</label
-                      >
                     </div>
                     <div class="relative z-0 w-full mb-5 group">
                       <input
@@ -119,46 +104,32 @@ const formVisible = ref(true)
                         name="floating_tel"
                         id="floating_tel"
                         class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
-                        placeholder=" "
+                        placeholder="Phone Number"
                         required
                       />
-                      <label
-                        for="floating_tel"
-                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-orange-500 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                        >Phone Number</label
-                      >
                     </div>
                   </div>
                   <div class="relative z-0 w-full mb-5 group">
-                    <input
+                    <textarea
                       type="text"
-                      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                       name="floating_description"
                       id="floating_description"
                       class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
-                      placeholder=" "
+                      placeholder="What is your business about ?"
+                      rows="3"
                       required
-                    />
-                    <label
-                      for="floating_description"
-                      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-orange-500 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                      >Company Description</label
-                    >
+                    ></textarea>
                   </div>
                   <div class="relative z-0 w-full mb-5 group">
-                    <input
+                    <textarea
                       type="text"
                       name="floating_space_needed"
                       id="floating_space_needed"
                       class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
-                      placeholder=" "
+                      placeholder="How much space will your business need ?"
+                      rows="3"
                       required
-                    />
-                    <label
-                      for="floating_space_needed"
-                      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-orange-500 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                      >Space Needed</label
-                    >
+                    ></textarea>
                   </div>
 
                   <button
@@ -173,15 +144,15 @@ const formVisible = ref(true)
             <h2 id="accordion-collapse-heading-2">
               <button
                 type="button"
-                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 gap-3"
                 data-accordion-target="#accordion-collapse-body-2"
                 aria-expanded="false"
                 aria-controls="accordion-collapse-body-2"
               >
-                <span class="text-white">Register as Sponsor</span>
+                <span class="text-white">Register as Volunteer</span>
                 <svg
                   data-accordion-icon
-                  class="w-3 h-3 rotate-90 shrink-0"
+                  class="text-white w-3 h-3 rotate-90 shrink-0"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -200,15 +171,15 @@ const formVisible = ref(true)
             <h2 id="accordion-collapse-heading-3">
               <button
                 type="button"
-                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 gap-3"
                 data-accordion-target="#accordion-collapse-body-3"
                 aria-expanded="false"
                 aria-controls="accordion-collapse-body-3"
               >
-                <span class="text-white">Register as Exhibitor</span>
+                <span class="text-white">Register as Sponsor</span>
                 <svg
                   data-accordion-icon
-                  class="w-3 h-3 rotate-90 shrink-0"
+                  class="text-white w-3 h-3 rotate-90 shrink-0"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -231,7 +202,7 @@ const formVisible = ref(true)
 
     <img
       alt=""
-      src="/public/images/1.jpg"
+      src="/images/1-min.jpg"
       class="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
     />
   </section>

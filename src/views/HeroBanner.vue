@@ -10,7 +10,8 @@ import CtaBtn from '@/components/CtaBtn.vue'
   <div class="bg-[#212121] py-13 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="child-container">
       <div class="title-container">
-        <span class="title bg-[#f91622] items-center bg-clip-text text-transparent"
+        <span
+          class="title bg-gradient-to-r from-[#f91622] to-[#a8000b] items-center bg-clip-text text-transparent"
           >TAG CON 2025</span
         >
         <img src="../../public/images/Hero-image.webp" alt="A guy wearing a VR Headset" srcset="" />

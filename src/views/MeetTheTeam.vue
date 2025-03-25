@@ -38,21 +38,25 @@
             <img class="h-auto max-w-full rounded-lg" src="/images/team/TAG CON-5-min.jpg" alt="" />
           </div>
           <div>
-            <img class="h-auto max-w-full rounded-lg" src="/images/team/TAG CON-8-min.jpg" alt="" />
-          </div>
-        </div>
-        <div class="grid gap-4">
-          <div>
             <img
               class="h-auto max-w-full rounded-lg"
               src="/images/team/TAG CON-10-min.jpg"
               alt=""
             />
           </div>
+        </div>
+        <div class="grid gap-4">
           <div>
             <img
               class="h-auto max-w-full rounded-lg"
-              src="/images/team/TAG CON-11-min.jpg"
+              src="/images/team/TAG CON 12-min.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="/images/team/TAG CON 14-min.jpg"
               alt=""
             />
           </div>
