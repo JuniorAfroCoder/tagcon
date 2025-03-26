@@ -8,7 +8,7 @@
           Meet the <span>Team</span> Behind TAG Convention
         </h2>
         <p
-          class="font-[Avenir_Next_Roman] font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400"
+          class="font-[Avenir_Next_Roman] font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-white"
         >
           Meet the unique talents behind the preparation of this amazing event
         </p>

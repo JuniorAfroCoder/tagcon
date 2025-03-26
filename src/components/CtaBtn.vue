@@ -29,6 +29,9 @@ defineProps(['btnMessage', 'url'])
 </template>
 
 <style scoped>
+a {
+  background: linear-gradient(to right, #a8000b, #f91622);
+}
 a:hover {
   background: rgb(168, 0, 11);
   background: linear-gradient(90deg, rgba(168, 0, 11, 1) 0%, rgba(249, 22, 34, 1) 100%);

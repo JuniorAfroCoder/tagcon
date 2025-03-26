@@ -59,6 +59,9 @@ import Slider from '@/components/Slider.vue'
 </template>
 
 <style scoped>
+a {
+  background: linear-gradient(to right, #a8000b, #f91622);
+}
 h1 {
   color: #ff5722;
 }

@@ -10,10 +10,7 @@ import CtaBtn from '@/components/CtaBtn.vue'
   <div class="bg-[#212121] py-13 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="child-container">
       <div class="title-container">
-        <span
-          class="title bg-gradient-to-r from-[#f91622] to-[#a8000b] bg-clip-text text-transparent"
-          >TAG CON 2025</span
-        >
+        <span class="title">TAG CON 2025</span>
         <img src="../../public/images/Hero-image.webp" alt="A guy wearing a VR Headset" srcset="" />
       </div>
       <div class="cta-container text-white">
@@ -136,6 +133,9 @@ import CtaBtn from '@/components/CtaBtn.vue'
   font-weight: bold;
   line-height: normal;
   text-align: center;
+  background: linear-gradient(to top, #f91622, #a8000b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media screen and (min-width: 770px) {
