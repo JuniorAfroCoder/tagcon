@@ -11,12 +11,12 @@ import CtaBtn from '@/components/CtaBtn.vue'
     <div class="child-container">
       <div class="title-container">
         <span
-          class="title bg-gradient-to-r from-[#f91622] to-[#a8000b] items-center bg-clip-text text-transparent"
+          class="title bg-gradient-to-r from-[#f91622] to-[#a8000b] bg-clip-text text-transparent"
           >TAG CON 2025</span
         >
         <img src="../../public/images/Hero-image.webp" alt="A guy wearing a VR Headset" srcset="" />
       </div>
-      <div class="cta-container">
+      <div class="cta-container text-white">
         <div class="top">
           <p>
             The Technology, Animation, and Gaming
@@ -96,7 +96,6 @@ import CtaBtn from '@/components/CtaBtn.vue'
   display: flex;
   flex-direction: column;
   flex: 2;
-  color: white;
 }
 
 .title-container {

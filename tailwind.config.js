@@ -12,5 +12,6 @@ module.exports = {
   content: {
     transform: (content) => content.replace(/taos:/g, ''),
     relative: true,
+    content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   },
 }
