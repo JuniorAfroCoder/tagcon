@@ -32,7 +32,7 @@ const errorMessage = ref('');
 
 const submitForm = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/submit-exhibitor-form', {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/submit-exhibitor-form`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ const errorMessage2 = ref('');
 
 const submitSecondForm = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/submit-volunteer-form', {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/submit-volunteer-form`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

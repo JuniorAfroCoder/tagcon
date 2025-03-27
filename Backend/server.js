@@ -4,8 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const ExhibitorSubmission = require('./Routes/exhibitorForms')
 const VolunteerSubmission = require("./Routes/volunteerForms")
-
-
+const cors= require('cors');
 const rateLimit = require('express-rate-limit');
 const slowDown = require('express-slow-down');
 
@@ -26,13 +25,22 @@ const speedLimiter = slowDown({
   delayMs: 500 // Begin adding 500ms delay per request above 50
 });
 
+// Configure CORS
+const corsOptions = {
+  origin: [
+    'https://tagconvention.netlify.app',  // Your Render frontend URL
+    'http://localhost:5173',               // For local development
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'],  // Allowed headers
+};
 
 // Middlewares
 app.use(cors());
 app.use(express.json()); // Parse JSON requests
 app.use('/api/', apiLimiter);
 app.use(speedLimiter);
-
+app.use(cors(corsOptions));
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("MongoDB Connected"))
