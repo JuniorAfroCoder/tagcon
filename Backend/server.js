@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const ExhibitorSubmission = require('./Routes/exhibitorForms')
 const VolunteerSubmission = require("./Routes/volunteerForms")
-const cors= require('cors');
 const rateLimit = require('express-rate-limit');
 const slowDown = require('express-slow-down');
 
