@@ -8,6 +8,6 @@ const ExhibitorSchema = new mongoose.Schema({
     companyDescription: String,
     spaceNeeded: String,
     createdAt: { type: Date, default: Date.now }
-}, { collection: 'tagcon_exhibitors' });;
+}, { collection: 'tagcon_exhibitors' });
 
 module.exports = mongoose.model('ExhibitorForm', ExhibitorSchema)

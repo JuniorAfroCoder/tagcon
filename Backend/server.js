@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const ExhibitorSubmission = require('./Routes/exhibitorForms')
 const VolunteerSubmission = require("./Routes/volunteerForms")
+const AttendeeSubmission = require("./Routes/attendeeForms")
 const rateLimit = require('express-rate-limit');
 const slowDown = require('express-slow-down');
 
@@ -48,6 +49,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 app.use('/api/submit-exhibitor-form', ExhibitorSubmission)
 app.use('/api/submit-volunteer-form', VolunteerSubmission)
+app.use('/api/submit-attendee-form', AttendeeSubmission)
 
 
 

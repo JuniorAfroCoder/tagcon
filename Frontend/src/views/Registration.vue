@@ -3,20 +3,28 @@ import RegistrationBtn from '@/components/RegistrationBtn.vue'
 import { ref } from 'vue'
 const firstFormVisible = ref(false);
 const secondFormVisible = ref(false);
+const thirdFormVisible = ref(false);
 
 const toggleForm = (form) => {
   if (form === "first") {
     firstFormVisible.value = !firstFormVisible.value;
     secondFormVisible.value = false; // Hide second form when first is shown
+    thirdFormVisible.value=false; // Hide third form when first is shown
   } else if (form === "second") {
     secondFormVisible.value = !secondFormVisible.value;
     firstFormVisible.value = false; // Hide first form when second is shown
+    thirdFormVisible.value=false; // Hide third form when first is shown
+  }
+  else if( form === "third"){
+    thirdFormVisible.value = !thirdFormVisible.value;
+    firstFormVisible.value = false;
+    secondFormVisible.value = false;
   }
 };
 
 
 
-//first form data handling
+//exhibitor form handling
 
 const formData = ref({
   name: '',
@@ -55,7 +63,7 @@ const submitForm = async () => {
   }
 };
 
-//second form handling
+//Volunteeer form handling
 const volunteerForm = ref({
   name: '',
   email: '',
@@ -85,6 +93,43 @@ const submitSecondForm = async () => {
     successMessage2.value = 'Form submitted successfully!';
     errorMessage2.value = '';
     volunteerForm.value = { name: '', email: '', phoneNumber:'', age:'', sex:'sex' }; // Reset form
+    
+  } catch (error) {
+    errorMessage.value = 'There was a problem submitting the form.';
+    console.error('Error:', error);
+  }
+};
+
+//Attendee Form Handling
+const attendeeForm = ref({
+  name: '',
+  email: '',
+  phoneNumber:'',
+  age: '',
+  sex:'sex',
+});
+
+const successMessage3 = ref('');
+const errorMessage3 = ref('');
+
+const submitThirdForm = async () => {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/submit-attendee-form`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(attendeeForm.value)
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const data = await response.json();
+    successMessage3.value = 'Form submitted successfully!';
+    errorMessage3.value = '';
+    attendeeForm.value = { name: '', email: '', phoneNumber:'', age:'', sex:'sex' }; // Reset form
     
   } catch (error) {
     errorMessage.value = 'There was a problem submitting the form.';
@@ -331,10 +376,10 @@ const submitSecondForm = async () => {
                     </div>
                    -->
                    <div class="relative z-0 w-full mb-5 group">
-                      <select class="block py-2.5 px-0 w-full text-sm bg-[#212121] text-white border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer" id="age-range" name="age-range" v-model="volunteerForm.sex" required>
-                        <option value="" disabled selected>Sex</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                      <select class="block py-2.5 px-0 w-full text-sm bg-[#212121] text-white border-0 border-b-2 border-gray-300  dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer" id="age-range" name="age-range" v-model="volunteerForm.sex"  required>
+                        <option value="sex" disabled selected>Sex</option>
+                        <option value="male" >Male</option>
+                        <option value="female" >Female</option>
                       </select>
                     </div>
                   
@@ -351,16 +396,17 @@ const submitSecondForm = async () => {
             </div>
             <h2 id="accordion-collapse-heading-3">
               <button
+              @click="toggleForm('third')"
                 type="button"
                 class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 gap-3"
                 data-accordion-target="#accordion-collapse-body-3"
                 aria-expanded="false"
                 aria-controls="accordion-collapse-body-3"
               >
-                <span class="text-white">Register as Sponsor</span>
+                <span class="text-white">Register as Attendee</span>
                 <svg
                   data-accordion-icon
-                  class="text-white w-3 h-3 rotate-90 shrink-0"
+                  class="text-white w-3 h-3 rotate-180 shrink-0"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -376,6 +422,88 @@ const submitSecondForm = async () => {
                 </svg>
               </button>
             </h2>
+            <div id="accordion-collapse-body-1" aria-labelledby="accordion-collapse-heading-1">
+              <div
+                v-if="thirdFormVisible"
+                class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+              >
+                <form @submit.prevent="submitThirdForm" class="max-w-md mx-auto">
+                  <div class="relative z-0 w-full mb-5 group">
+                    <input
+                      type="name"
+                      name="floating_name"
+                      id="floating_name"
+                      class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
+                      placeholder="Full Name"
+                      v-model="attendeeForm.name"
+                      required
+                    />
+                  </div>
+                  <div class="relative z-0 w-full mb-5 group">
+                    <input
+                      type="email"
+                      name="floating_email"
+                      id="floating_email"
+                      class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
+                      placeholder="Email Address"
+                      v-model="attendeeForm.email"
+                      required
+                    />
+                  </div>
+
+                  <div class="relative z-0 w-full mb-5 group">
+                      <input
+                        type="tel"
+                        name="floating_tel"
+                        id="floating_tel"
+                        class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
+                        placeholder="Phone Number"
+                        v-model="attendeeForm.phoneNumber"
+                        required
+                      />
+                    </div>
+                  <div class="relative z-0 w-full mb-5 group">
+                      <input
+                        type="number"
+                        name="floating_age"
+                        id="floating_age"
+                        class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
+                        placeholder="Age"
+                        v-model="attendeeForm.age"
+                        required
+                      />
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                      <select class="block py-2.5 px-0 w-full text-sm bg-[#212121] text-white border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer" id="age" name="age" v-model="attendeeForm.sex" required>
+                        <option value="sex" disabled selected>Sex</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                      </select>
+                    </div>
+
+                    <!-- <div class="relative z-0 w-full mb-5 group">
+                    <label for="interests" class="text-neutral-400">Interests (select all that apply)</label><br>
+                      <input type="checkbox" id="tech" name="tech" value="tech">
+                      <label for="tech" class="text-white"> Technology</label><br>
+                      <input type="checkbox" id="anime" name="anime" value="anime">
+                      <label for="anime" class="text-white"> Anime</label><br>
+                      <input type="checkbox" id="gaming" name="gaming" value="gaming">
+                      <label for="gaming" class="text-white"> Gaming</label>
+                    </div> -->
+
+
+                  <button
+                  
+                    type="submit"
+                    class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-orange-500 dark:hover:bg-orange-600 dark:focus:ring-orange-700"
+                  >
+                    Submit
+                  </button>
+                  <p v-if="successMessage3" class="success">{{ successMessage3 }}</p>
+                  <p v-if="errorMessage3" class="error">{{ errorMessage3 }}</p>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
