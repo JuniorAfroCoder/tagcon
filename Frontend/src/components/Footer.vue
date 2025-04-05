@@ -122,7 +122,8 @@
         </li>
       </ul>
       <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 dark:text-gray-400">
-        © 2025 TAG Convention. All Rights Reserved.
+        © 2025 TAG Convention. All Rights Reserved. <br>
+        Designed by <a target="_blank" style="color: #6a7282; text-decoration: underline;" href="https://github.com/JuniorAfroCoder">JuniorAfroCoder</a>
       </p>
     </div>
   </footer>
