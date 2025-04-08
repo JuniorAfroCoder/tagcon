@@ -1,7 +1,7 @@
 <template>
   <div id="contact" class="bg-[#212121] py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="grid grid-cols-1 md:grid-cols-12">
-      <div class="bg-[#383838] md:col-span-4 p-10 text-white">
+      <div  data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200" class="bg-[#383838] md:col-span-4 p-10 text-white">
         <p class="font-[African_Culture] mt-4 text-sm leading-7 uppercase">Have Questions ?</p>
         <h3 class="font-[Recharge] text-2xl sm:text-5xl leading-none tracking-tight">
           Get In <span>Touch</span>
@@ -118,7 +118,7 @@
           <span class="font-[Avenir_Next_Roman] text-md">tagconvention@gmail.com</span>
         </div>
       </div>
-      <form action="https://formsubmit.co/jesusderrickm@gmail.com" method="POST" class="font-[Avenir_Next_Roman] md:col-span-8 p-10">
+      <form  data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200" action="https://formsubmit.co/jesusderrickm@gmail.com" method="POST" class="font-[Avenir_Next_Roman] md:col-span-8 p-10">
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
@@ -158,7 +158,7 @@
           <div class="w-full px-3">
             <label
               class="block uppercase tracking-wide text-white text-xs font-bold mb-2 dark:text-white"
-              for="grid-password"
+              for="grid-email"
             >
               Email Address
             </label>
@@ -177,12 +177,13 @@
           <div class="w-full px-3">
             <label
               class="block uppercase tracking-wide text-white text-xs font-bold mb-2 dark:text-white"
-              for="grid-password"
+              for="text-area"
               required
             >
               Your Message
             </label>
             <textarea
+            id="text-area"
               rows="10"
               name="Message"
               class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"

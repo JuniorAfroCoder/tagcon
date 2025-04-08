@@ -1,6 +1,6 @@
 <template>
   <div id="about" class="container py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-    <div class="image-container">
+    <div class="image-container" data-aos="zoom-out-up" data-aos-duration="1200">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="#ffffff"
@@ -16,10 +16,17 @@
     </div>
     <div class="text-container">
       <div class="title-container">
-        <p id="title">What is TAG Convention ?</p>
+        <p id="title" data-aos="fade-right"
+        data-aos-duration="800"
+     data-aos-offset="200"
+     data-aos-easing="ease-in-sine" >What is TAG Convention ?</p>
       </div>
       <div class="svg-container">
-        <p id="info-text">
+        <p id="info-text" data-aos="fade-right"
+     data-aos-offset="200"
+     data-aos-duration="1000"
+     data-aos-delay="300"
+     data-aos-easing="ease-in-sine">
           The TAG Convention (Tech-Animation-Gaming Convention) is
           <span>Burundi's premier event </span>bringing together enthusiasts, creators, and industry
           leaders in technology, gaming, and animation. It's a platform for <span>innovation</span>,

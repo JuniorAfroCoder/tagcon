@@ -146,7 +146,7 @@ const submitThirdForm = async () => {
     class="bg-[#212121] py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 overflow-hidden sm:grid sm:grid-cols-2 sm:items-center"
   >
     <div class="p-8 md:p-12 lg:px-16 lg:py-24">
-      <div class="flex flex-col justify-center align-center text-center lg:text-start">
+      <div class="overflow-hidden flex flex-col justify-center align-center text-center lg:text-start" data-aos="fade-right" data-aos-duration="1200" data-aos-anchor="#registration">
         <h2
           class="font-[Recharge] uppercase text-3xl font-bold text-white md:text-5xl dark:text-white"
         >
@@ -508,12 +508,15 @@ const submitThirdForm = async () => {
         </div>
       </div>
     </div>
-
+    <div class="h-full w-full">
     <img
+    data-aos="fade-left" data-aos-duration="1200" data-aos-anchor="#registration"
       alt=""
       src="/images/1-min.jpg"
-      class="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
+      class="object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
     />
+    </div>
+    
   </section>
 </template>
 

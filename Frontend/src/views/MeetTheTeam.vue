@@ -4,11 +4,13 @@
       <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
         <h2
           class="font-[Recharge] uppercase mb-4 text-3xl tracking-tight font-extrabold sm:text-5xl text-white dark:text-white"
+          data-aos="fade-up" data-aos-duration="1000" 
         >
           Meet the <span>Team</span> Behind TAG Convention
         </h2>
         <p
           class="font-[Avenir_Next_Roman] font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-white"
+          data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"
         >
           Meet the unique talents behind the preparation of this amazing event
         </p>
