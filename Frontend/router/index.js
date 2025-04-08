@@ -17,7 +17,6 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   AOS.init(
     {
-      startEvent: 'load',
       once: true,
     }); // Initialize AOS
   next();
