@@ -20,4 +20,9 @@ import Sponsorships from './views/Sponsorships.vue'
   <Footer />
 </template>
 
-<style scoped></style>
+<style scoped>
+body{
+  overflow: hidden;
+}
+
+</style>

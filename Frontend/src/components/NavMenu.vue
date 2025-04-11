@@ -181,6 +181,7 @@ const isOpen = ref(hidden)
 <style scoped>
 header {
   font-family: 'Avenir Next Roman', sans-serif;
+  background-color: #212121 ;
 }
 
 a {
@@ -190,4 +191,7 @@ a {
 a:hover {
   color: #a8000b;
 }
+
+  
+
 </style>
