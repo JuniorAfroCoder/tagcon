@@ -118,7 +118,7 @@
           <span class="font-[Avenir_Next_Roman] text-md">tagconvention@gmail.com</span>
         </div>
       </div>
-      <form  data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200" action="https://formsubmit.co/jesusderrickm@gmail.com" method="POST" class="font-[Avenir_Next_Roman] md:col-span-8 p-10">
+      <form  data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200" action="https://formsubmit.co/tagconvention@gmail.com" method="POST" class="font-[Avenir_Next_Roman] md:col-span-8 p-10">
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label

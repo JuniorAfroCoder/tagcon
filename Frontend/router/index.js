@@ -18,6 +18,12 @@ router.beforeEach((to, from, next) => {
   AOS.init(
     {
       once: true,
+      offset: 120,
+      anchorPlacement: 'top-bottom',
+      disableMutationObserver: false, // disables automatic mutations' detections 
+  debounceDelay: 50, // the delay on debounce used while resizing window 
+  throttleDelay: 99, // the delay on throttle used while scrolling the page 
+
     }); // Initialize AOS
   next();
 });
