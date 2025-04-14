@@ -19,60 +19,37 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="col-span-4 rounded-lg">
-          <img v-lazy="'/images/team/Tag_Con_2025[1].jpg'" alt="">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="col-span-4 ">
+          <img class="h-auto max-w-full rounded-lg" v-lazy="'https://ik.imagekit.io/tagcon/images/team/Tag_Con_2025_1_.jpg?updatedAt=1744623957925'" alt="">
         </div>
         <div class="grid gap-4">
           <div>
             <img
-              v-lazy=" '/images/team/TAG CON-1-min.jpg' "
+              v-lazy=" 'https://ik.imagekit.io/tagcon/images/team/TAG%20CON-1-min.jpg?updatedAt=1744623934032' "
               class="h-auto max-w-full rounded-lg"
               
               alt="Image"
             />
           </div>
           <div>
-            <img class="h-auto max-w-full rounded-lg" v-lazy=" '/images/team/TAG CON-2-min.jpg' " alt="" />
+            <img class="h-auto max-w-full rounded-lg" v-lazy=" 'https://ik.imagekit.io/tagcon/images/team/TAG%20CON-2-min.jpg?updatedAt=1744623940229' " alt="" />
           </div>
           <div>
-            <img class="h-auto max-w-full rounded-lg" v-lazy=" '/images/team/TAG CON-3-min.jpg' " alt="" />
-          </div>
-        </div>
-        <div class="grid gap-4">
-          <div>
-            <img class="h-auto max-w-full rounded-lg" v-lazy="'/images/team/TAG CON-4-min.jpg'" alt="" />
-          </div>
-          <div>
-            <img class="h-auto max-w-full rounded-lg" v-lazy="'/images/team/TAG CON-5-min.jpg'" alt="" />
-          </div>
-          <div>
-            <img
-              class="h-auto max-w-full rounded-lg"
-              v-lazy="'/images/team/TAG CON-10-min.jpg'"
-              alt=""
-            />
+            <img class="h-auto max-w-full rounded-lg" v-lazy=" 'https://ik.imagekit.io/tagcon/images/team/TAG%20CON-3-min.jpg?updatedAt=1744623945121' " alt="" />
           </div>
         </div>
         <div class="grid gap-4">
           <div>
-            <img
-              class="h-auto max-w-full rounded-lg"
-              v-lazy="'/images/team/TAG CON 12-min.jpg'"
-              alt=""
-            />
+            <img class="h-auto max-w-full rounded-lg" v-lazy="'https://ik.imagekit.io/tagcon/images/team/TAG%20CON-4-min.jpg?updatedAt=1744623946682'" alt="" />
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" v-lazy="'https://ik.imagekit.io/tagcon/images/team/TAG%20CON%2012-min.jpg?updatedAt=1744623929925'" alt="" />
           </div>
           <div>
             <img
               class="h-auto max-w-full rounded-lg"
-              v-lazy="'/images/team/TAG CON 14-min.jpg'"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              class="h-auto max-w-full rounded-lg"
-              v-lazy="'/images/team/TAG CON-16-min.jpg'"
+              v-lazy="'https://ik.imagekit.io/tagcon/images/team/TAG%20CON-10-min.jpg?updatedAt=1744623933968'"
               alt=""
             />
           </div>
@@ -81,21 +58,21 @@
           <div>
             <img
               class="h-auto max-w-full rounded-lg"
-              v-lazy="'/images/team/TAG CON-17-min.jpg'"
+              v-lazy="'https://ik.imagekit.io/tagcon/images/team/TAG%20CON-17-min.jpg?updatedAt=1744623937060'"
               alt=""
             />
           </div>
           <div>
             <img
               class="h-auto max-w-full rounded-lg"
-              v-lazy="'/images/team/TAG CON-18-min.jpg'"
+              v-lazy="'https://ik.imagekit.io/tagcon/images/team/TAG%20CON-18-min.jpg?updatedAt=1744623936249'"
               alt=""
             />
           </div>
           <div>
             <img
               class="h-auto max-w-full rounded-lg"
-              v-lazy="'/images/team/TAG CON-20-min.jpg'"
+              v-lazy="'https://ik.imagekit.io/tagcon/images/team/TAG%20CON-20-min.jpg?updatedAt=1744623942169'"
               alt=""
             />
           </div>
