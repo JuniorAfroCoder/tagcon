@@ -1,10 +1,25 @@
 <template>
-  <div id="contact" class="bg-[#212121] py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+  <div id="contact" class="bg-[#212121] py-8 px-4 mb-30 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+        <h2
+          class="font-[Recharge] uppercase mb-4 text-3xl tracking-tight font-extrabold sm:text-5xl text-white dark:text-white"
+          data-aos="fade-up" data-aos-duration="1000" 
+        >
+          Get In <span>Touch</span>
+        </h2>
+        <p
+          class="font-[Avenir_Next_Roman] font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-white"
+          data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"
+        >
+          Your vision matters to us. Feel free to drop us a message.
+        </p>
+      </div>
+
     <div class="grid grid-cols-1 md:grid-cols-12">
       <div  data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200" class="bg-[#383838] md:col-span-4 p-10 text-white">
         <p class="font-[African_Culture] mt-4 text-sm leading-7 uppercase">Have Questions ?</p>
-        <h3 class="font-[Recharge] text-2xl sm:text-5xl leading-none tracking-tight">
-          Get In <span>Touch</span>
+        <h3 class="font-[Recharge] text-xl sm:text-4xl leading-none tracking-tight">
+          Reach out
         </h3>
         <p class="font-[Avenir_Next_Roman] mt-4 leading-7 text-gray-200">
           Do you have a question or need a clarification? Visit us, send us an email, or complete
@@ -13,7 +28,7 @@
 
         <div class="flex items-center mt-5">
           <svg
-            class="h-6 mr-2 text-indigo-600"
+            class="h-10 mr-2 text-indigo-600"
             fill="currentColor"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -212,7 +227,7 @@ svg {
   fill: #ff5722;
 }
 
-h3 span {
+h2 span {
   color: #ff5722;
 }
 </style>

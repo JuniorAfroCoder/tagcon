@@ -1,5 +1,5 @@
 <template>
-  <div class="slider">
+  <div class="slider ">
     <div class="slide-track">
       <div class="slide">
         <img
@@ -128,18 +128,18 @@
 }
 
 .slider {
-  background: white;
+  /* background: white; */
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
   height: 100px;
   margin: auto;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
-  width: 80%;
+  width: 100%;
 }
 
 .slider::before,
 .slider::after {
-  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  /* background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); */
   content: '';
   height: 100px;
   position: absolute;

@@ -3,7 +3,7 @@ import Slider from '@/components/Slider.vue'
 </script>
 
 <template>
-  <section id="sponsorships" class="overflow-hidden bg-[#212121] text-white pb-4">
+  <section id="sponsorships" class="overflow-visible bg-[#212121] text-white pb-4">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 lg:flex-rows-1 lg:items-center">
       <div class="mx-auto max-w-3xl text-center">
         <h1 data-aos="fade-up"
@@ -40,7 +40,7 @@ import Slider from '@/components/Slider.vue'
             href="#" data-aos="zoom-in" data-aos-delay="1400" data-aos-duration="500" data-aos-easing="ease-in-back"
           >
             <span
-              class="font-[Avenir_Next_Roman] block rounded-xs bg-black px-8 py-3 text-sm font-medium group-hover:bg-transparent"
+              class="font-[Avenir_Next_Roman] block rounded-xs bg-[#28282B] px-8 py-3 text-sm font-medium group-hover:bg-transparent"
             >
               Contact Us For Opportunities
             </span>

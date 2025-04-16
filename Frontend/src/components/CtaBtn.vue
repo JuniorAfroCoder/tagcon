@@ -8,7 +8,7 @@ defineProps(['btnMessage', 'url'])
     :href="url"
   >
     <span
-      class="flex flex-row justify-between rounded-full text-white bg-black px-3 py-3 text-sm font-medium hover:text-white group-hover:bg-transparent"
+      class="flex flex-row justify-between rounded-full text-white bg-[#28282B] px-3 py-3 text-sm font-medium hover:text-white group-hover:bg-transparent"
     >
       {{ btnMessage }}
       <svg
