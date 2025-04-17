@@ -11,7 +11,7 @@
           class="font-[Avenir_Next_Roman] font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-white"
           data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"
         >
-          Your vision matters to us. Feel free to drop us a message.
+          Your opinion matters to us. Feel free to drop us a message.
         </p>
       </div>
 
@@ -201,7 +201,7 @@
             id="text-area"
               rows="10"
               name="Message"
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required
             ></textarea>
           </div>
           <div class="flex justify-end w-full mt-3 px-3">
