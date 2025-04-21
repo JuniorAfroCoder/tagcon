@@ -1,5 +1,19 @@
 <script setup>
 import Slider from '@/components/Slider.vue'
+
+const partnersLogos = [
+  { src: '/logos/GoAgentic.png', alt: 'Go Agentic Logo' },
+  { src:'/logos/Iris2.png', alt:'Iris Logo'},
+  { src:'/logos/NuyuAgency.png', alt:'Nuyu Agency Logo'},
+  { src:'/logos/PLC.png', alt:'PLC Logo'},
+  { src:'/logos/Kuziko.png', alt:'Kuziko Logo'}
+  
+]
+
+const sponsorsLogos =[
+  { src:'/logos/Hogi.png', alt:'Hogi Logo'}
+]
+
 </script>
 
 <template>
@@ -51,11 +65,30 @@ import Slider from '@/components/Slider.vue'
         <h3 class="font-[African_Culture] uppercase text-center text-3xl mb-5">
           already sponsoring us
         </h3>
-        <Slider />
+        <!-- <Slider /> -->
+        <div class="slider">
+          <div class="no-slide-track">
+            <div v-for="(img, index) in sponsorsLogos" :key="index" class="slide">
+              <img :src="img.src" :alt="img.alt" class="images" >
+            </div>
+          </div>
+        </div>
         <h3 class="font-[African_Culture] uppercase text-center text-3xl mt-8 mb-5 lg:mt-20">
-          already our partners
+          already partnering with us
         </h3>
-        <Slider />
+        <div class="slider">
+          <div class="slide-track">
+            <div v-for="(img, index) in partnersLogos" :key="index" class="slide">
+              <img :src="img.src" :alt="img.alt" class="images" >
+            </div>
+            <div v-for="(img, index) in partnersLogos" :key="index" class="slide">
+              <img :src="img.src" :alt="img.alt" class="images" >
+            </div>
+             <div v-for="(img, index) in partnersLogos" :key="index" class="slide">
+              <img :src="img.src" :alt="img.alt" class="images" >
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -70,4 +103,66 @@ h1 {
 }
 
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+.slider {
+  background: white; 
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slider::before,
+.slider::after {
+  /* background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); */
+  content: '';
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+
+.no-slide-track{
+  display:flex;
+  justify-content: center;
+}
+
+.slide {
+  height: 100px;
+  width: 250px;
+  object-fit: cover;
+}
+
+.images{
+  max-width: 100%;
+  max-height: 100%;
+  
+}
 </style>
