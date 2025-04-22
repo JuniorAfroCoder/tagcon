@@ -2,7 +2,7 @@
   <footer class="bg-[#212121] border-solid border-t border-gray-500">
     <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
       <div class="flex justify-center text-teal-600 dark:text-teal-300">
-        <img src="../../public/images/logo.png" alt="Tag Con Logo" width="40%" />
+        <img src="/images/logo.png" alt="Tag Con Logo" width="40%" />
       </div>
       <!-- 
       <p

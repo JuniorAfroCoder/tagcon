@@ -11,7 +11,7 @@ import CtaBtn from '@/components/CtaBtn.vue'
     <div class="child-container">
       <div class="title-container">
         <span class="title" data-aos="fade-down" data-aos-duration="1500">TAG CON 2025</span>
-        <img src="../../public/images/Hero-image.webp" data-aos="zoom-in" data-aos-duration="1000" alt="A guy wearing a VR Headset" srcset="" />
+        <img src="/images/Hero-image.webp" data-aos="zoom-in" data-aos-duration="1000" alt="A guy wearing a VR Headset" srcset="" />
       </div>
       <div class="cta-container text-white">
         <div class="top" data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">
@@ -42,10 +42,6 @@ import CtaBtn from '@/components/CtaBtn.vue'
 </template>
 
 <style scoped>
-
-.heroBanner{
-  background-image: url(/Frontend/public/images/background.jpg);
-}
 
 .down-arrow {
   opacity: 0;

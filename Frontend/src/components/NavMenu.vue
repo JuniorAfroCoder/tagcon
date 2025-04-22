@@ -17,7 +17,7 @@ const isOpen = ref(hidden)
           <a class="block text-orange dark:text-orange" href="#">
             <span class="sr-only">Home</span>
             <img
-              src="../../public/images/logo.png"
+              src="/images/logo.png"
               alt="Tag Con Logo"
               srcset=""
               width="100px"
