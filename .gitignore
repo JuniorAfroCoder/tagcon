@@ -1,1 +1,10 @@
 /venv
+*.pyc
+*.pyd
+????_*.py
+*.sqlite3*
+/media
+
+**__pycache__
+
+/dist
