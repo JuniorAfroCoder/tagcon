@@ -118,6 +118,15 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
+     'DEFAULT_RENDERER_CLASSES': (
+        'djangorestframework_camel_case.render.CamelCaseJSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ),
+    'DEFAULT_PARSER_CLASSES': (
+        'djangorestframework_camel_case.parser.CamelCaseJSONParser',
+        'rest_framework.parsers.FormParser',              # ✅ Add this
+        'rest_framework.parsers.MultiPartParser',     
+    ),
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.SessionAuthentication',
@@ -155,3 +164,10 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_HOST = "mail.ksquad.dev"
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "tagcon@ksquad.dev"
+EMAIL_HOST_PASSWORD = "ZlEmw$tY0i8("
+DEFAULT_FROM_EMAIL = "tagcon@ksquad.dev"
+EMAIL_USE_SSL = True

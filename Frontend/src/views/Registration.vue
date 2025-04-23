@@ -1,9 +1,14 @@
 <script setup>
 import RegistrationBtn from '@/components/RegistrationBtn.vue'
-import { ref } from 'vue'
+import { ref,inject } from 'vue'
+
 const firstFormVisible = ref(false);
 const secondFormVisible = ref(false);
 const thirdFormVisible = ref(false);
+const djangoBackend = ref(true)
+
+const axios = inject('axios')
+
 
 const toggleForm = (form) => {
   if (form === "first") {
@@ -25,8 +30,7 @@ const toggleForm = (form) => {
 
 
 //exhibitor form handling
-
-const formData = ref({
+const exhibitorsFormData = ref({
   name: '',
   email: '',
   companyName: '',
@@ -38,33 +42,38 @@ const formData = ref({
 const successMessage = ref('');
 const errorMessage = ref('');
 
-const submitForm = async () => {
-  try {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/submit-exhibitor-form`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData.value)
-    });
+const submitExhibitorForm = async () => {
+  if(djangoBackend.value){
+    submitExhibitorFormDjango()
+  }else{
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/submit-exhibitor-form`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(exhibitorsFormData.value)
+      });
 
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      successMessage.value = 'Form submitted successfully!';
+      errorMessage.value = '';
+      exhibitorsFormData.value = { name: '', email: '', companyName: '', phoneNumber:'', companyDescription:'',spaceNeeded:'' }; // Reset form
+      
+    } catch (error) {
+      errorMessage.value = 'There was a problem submitting the form.';
+      console.error('Error:', error);
     }
-
-    const data = await response.json();
-    successMessage.value = 'Form submitted successfully!';
-    errorMessage.value = '';
-    formData.value = { name: '', email: '', companyName: '', phoneNumber:'', companyDescription:'',spaceNeeded:'' }; // Reset form
-    
-  } catch (error) {
-    errorMessage.value = 'There was a problem submitting the form.';
-    console.error('Error:', error);
   }
+
 };
 
 //Volunteeer form handling
-const volunteerForm = ref({
+const volunteerFormData = ref({
   name: '',
   email: '',
   phoneNumber:'',
@@ -75,33 +84,38 @@ const volunteerForm = ref({
 const successMessage2 = ref('');
 const errorMessage2 = ref('');
 
-const submitSecondForm = async () => {
-  try {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/submit-volunteer-form`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(volunteerForm.value)
-    });
+const submitVolunteerForm = async () => {
+  if(djangoBackend.value){
+    submitVolunteerFormDjango()
+  }
+  else{
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/submit-volunteer-form`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(volunteerFormData.value)
+      });
 
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      successMessage2.value = 'Form submitted successfully!';
+      errorMessage2.value = '';
+      volunteerFormData.value = { name: '', email: '', phoneNumber:'', age:'', sex:'sex' }; // Reset form
+      
+    } catch (error) {
+      errorMessage2.value = 'There was a problem submitting the form.';
+      console.error('Error:', error);
     }
-
-    const data = await response.json();
-    successMessage2.value = 'Form submitted successfully!';
-    errorMessage2.value = '';
-    volunteerForm.value = { name: '', email: '', phoneNumber:'', age:'', sex:'sex' }; // Reset form
-    
-  } catch (error) {
-    errorMessage.value = 'There was a problem submitting the form.';
-    console.error('Error:', error);
   }
 };
 
 //Attendee Form Handling
-const attendeeForm = ref({
+const attendeeFormData = ref({
   name: '',
   email: '',
   phoneNumber:'',
@@ -112,25 +126,68 @@ const attendeeForm = ref({
 const successMessage3 = ref('');
 const errorMessage3 = ref('');
 
-const submitThirdForm = async () => {
-  try {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/submit-attendee-form`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(attendeeForm.value)
-    });
+const submitAttendeeForm = async () => {
+  if(djangoBackend.value){
+    submitAttendeeFormDjango()
+  }
+  else{
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/submit-attendee-form`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(attendeeFormData.value)
+      });
 
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      successMessage3.value = 'Form submitted successfully!';
+      errorMessage3.value = '';
+      attendeeFormData.value = { name: '', email: '', phoneNumber:'', age:'', sex:'sex' }; // Reset form
+    } catch (error) {
+      errorMessage.value = 'There was a problem submitting the form.';
+      console.error('Error:', error);
     }
+  }
 
-    const data = await response.json();
+};
+
+//form submitting on djangoBackend
+
+const submitExhibitorFormDjango= async () => {
+  try {
+    const response = await axios.post('/exhibitors/', exhibitorsFormData.value)
+    successMessage.value = 'Form submitted successfully!';
+    errorMessage.value = '';
+    attendeeFormData.value = { name: '', email: '', phoneNumber:'', age:'', sex:'sex' }; // Reset form
+  } catch (error) {
+    errorMessage.value = 'There was a problem submitting the form.';
+    console.error('Error:', error);
+  }
+}
+
+const submitVolunteerFormDjango = async () => {
+  try {
+    const response = await axios.post('/volunteers/', volunteerFormData.value)
+    successMessage2.value = 'Form submitted successfully!';
+    errorMessage2.value = '';
+    attendeeFormData.value = { name: '', email: '', phoneNumber:'', age:'', sex:'sex' };
+  } catch (error) {
+    errorMessage.value = 'There was a problem submitting the form.';
+    console.error('Error:', error);
+  }
+};
+
+const submitAttendeeFormDjango = async () => {
+  try {
+    const response = await axios.post('/attendees/', attendeeFormData.value)
     successMessage3.value = 'Form submitted successfully!';
     errorMessage3.value = '';
-    attendeeForm.value = { name: '', email: '', phoneNumber:'', age:'', sex:'sex' }; // Reset form
-    
+    attendeeFormData.value = { name: '', email: '', phoneNumber:'', age:'', sex:'sex' }; // Reset form
   } catch (error) {
     errorMessage.value = 'There was a problem submitting the form.';
     console.error('Error:', error);
@@ -196,7 +253,7 @@ const submitThirdForm = async () => {
                 v-if="firstFormVisible"
                 class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
               >
-                <form @submit.prevent="submitForm" class="max-w-md mx-auto">
+                <form @submit.prevent="submitExhibitorForm" class="max-w-md mx-auto">
                   <div class="relative z-0 w-full mb-5 group">
                     <input
                       type="name"
@@ -204,7 +261,7 @@ const submitThirdForm = async () => {
                       id="floating_name"
                       class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
                       placeholder="Contact Full Name"
-                      v-model="formData.name"
+                      v-model="exhibitorsFormData.name"
                       required
                     />
                   </div>
@@ -215,7 +272,7 @@ const submitThirdForm = async () => {
                       id="floating_email"
                       class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
                       placeholder="Email"
-                      v-model="formData.email"
+                      v-model="exhibitorsFormData.email"
                       required
                     />
                   </div>
@@ -228,7 +285,7 @@ const submitThirdForm = async () => {
                         id="floating_company"
                         class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
                         placeholder="Company Name"
-                        v-model="formData.companyName"
+                        v-model="exhibitorsFormData.companyName"
                         required
                       />
                     </div>
@@ -239,7 +296,7 @@ const submitThirdForm = async () => {
                         id="floating_tel"
                         class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
                         placeholder="Phone Number"
-                        v-model="formData.phoneNumber"
+                        v-model="exhibitorsFormData.phoneNumber"
                         required
                       />
                     </div>
@@ -252,7 +309,7 @@ const submitThirdForm = async () => {
                       class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
                       placeholder="What is your business about ?"
                       rows="3"
-                      v-model="formData.companyDescription"
+                      v-model="exhibitorsFormData.companyDescription"
                       required
                     ></textarea>
                   </div>
@@ -264,7 +321,7 @@ const submitThirdForm = async () => {
                       class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
                       placeholder="How much space will your business need ?"
                       rows="3"
-                      v-model="formData.spaceNeeded"
+                      v-model="exhibitorsFormData.spaceNeeded"
                       required
                     ></textarea>
                   </div>
@@ -315,7 +372,7 @@ const submitThirdForm = async () => {
                 v-if="secondFormVisible"
                 class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
               >
-                <form @submit.prevent="submitSecondForm" class="max-w-md mx-auto">
+                <form @submit.prevent="submitVolunteerForm" class="max-w-md mx-auto">
                   <div class="relative z-0 w-full mb-5 group">
                     <input
                       type="name"
@@ -323,7 +380,7 @@ const submitThirdForm = async () => {
                       id="floating_volunteer_name"
                       class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
                       placeholder="Full Name"
-                      v-model="volunteerForm.name"
+                      v-model="volunteerFormData.name"
                       required
                     />
                   </div>
@@ -334,7 +391,7 @@ const submitThirdForm = async () => {
                       id="floating_volunteer_email"
                       class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
                       placeholder="Email"
-                      v-model="volunteerForm.email"
+                      v-model="volunteerFormData.email"
                       required
                     />
                   </div>
@@ -345,7 +402,7 @@ const submitThirdForm = async () => {
                         id="floating_tel"
                         class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
                         placeholder="Phone Number"
-                        v-model="volunteerForm.phoneNumber"
+                        v-model="volunteerFormData.phoneNumber"
                         required
                       />
                     </div>
@@ -358,7 +415,7 @@ const submitThirdForm = async () => {
                         placeholder="Age"
                         min="0"
                         max="100"
-                        v-model="volunteerForm.age"
+                        v-model="volunteerFormData.age"
                         required
                       />
                     </div>
@@ -376,7 +433,7 @@ const submitThirdForm = async () => {
                     </div>
                    -->
                    <div class="relative z-0 w-full mb-5 group">
-                      <select class="block py-2.5 px-0 w-full text-sm bg-[#212121] text-white border-0 border-b-2 border-gray-300  dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer" id="age-range" name="age-range" v-model="volunteerForm.sex"  required>
+                      <select class="block py-2.5 px-0 w-full text-sm bg-[#212121] text-white border-0 border-b-2 border-gray-300  dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer" id="age-range" name="age-range" v-model="volunteerFormData.sex"  required>
                         <option value="sex" disabled selected>Sex</option>
                         <option value="male" >Male</option>
                         <option value="female" >Female</option>
@@ -427,7 +484,7 @@ const submitThirdForm = async () => {
                 v-if="thirdFormVisible"
                 class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
               >
-                <form @submit.prevent="submitThirdForm" class="max-w-md mx-auto">
+                <form @submit.prevent="submitAttendeeForm" class="max-w-md mx-auto">
                   <div class="relative z-0 w-full mb-5 group">
                     <input
                       type="name"
@@ -435,7 +492,7 @@ const submitThirdForm = async () => {
                       id="floating_name"
                       class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
                       placeholder="Full Name"
-                      v-model="attendeeForm.name"
+                      v-model="attendeeFormData.name"
                       required
                     />
                   </div>
@@ -446,7 +503,7 @@ const submitThirdForm = async () => {
                       id="floating_email"
                       class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
                       placeholder="Email Address"
-                      v-model="attendeeForm.email"
+                      v-model="attendeeFormData.email"
                       required
                     />
                   </div>
@@ -458,7 +515,7 @@ const submitThirdForm = async () => {
                         id="floating_tel"
                         class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
                         placeholder="Phone Number"
-                        v-model="attendeeForm.phoneNumber"
+                        v-model="attendeeFormData.phoneNumber"
                         required
                       />
                     </div>
@@ -469,12 +526,12 @@ const submitThirdForm = async () => {
                         id="floating_age"
                         class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer"
                         placeholder="Age"
-                        v-model="attendeeForm.age"
+                        v-model="attendeeFormData.age"
                         required
                       />
                     </div>
                     <div class="relative z-0 w-full mb-5 group">
-                      <select class="block py-2.5 px-0 w-full text-sm bg-[#212121] text-white border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer" id="age" name="age" v-model="attendeeForm.sex" required>
+                      <select class="block py-2.5 px-0 w-full text-sm bg-[#212121] text-white border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-500 peer" id="age" name="age" v-model="attendeeFormData.sex" required>
                         <option value="sex" disabled selected>Sex</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>

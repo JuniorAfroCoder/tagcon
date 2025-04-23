@@ -11,6 +11,7 @@ router.register(r'volunteers', VolunteerViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('contact/', ContactView.as_view(), name='contact'),
     path('login/', TokenPairView.as_view()),
     path('refresh/', TokenRefreshView.as_view()),
     path('api-auth/', include('rest_framework.urls')),

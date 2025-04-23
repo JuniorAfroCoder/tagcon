@@ -2,8 +2,10 @@
 from rest_framework.decorators import action, permission_classes
 from rest_framework.permissions import IsAdminUser
 from django.http import HttpResponse
+from rest_framework.response import Response
 import csv
 import pandas as pd
+from rest_framework import status
 
 
 class ExportMixin:
@@ -36,3 +38,10 @@ class ExportMixin:
         response['Content-Disposition'] = f'attachment; filename="{self.export_filename}.xlsx"'
         df.to_excel(response, index=False)
         return response
+
+class SimplePostResponseMixin:
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        return Response({"status": "ok"}, status=status.HTTP_200_OK)
