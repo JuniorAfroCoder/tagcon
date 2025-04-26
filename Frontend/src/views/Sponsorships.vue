@@ -2,11 +2,11 @@
 import Slider from '@/components/Slider.vue'
 
 const partnersLogos = [
-  { src: '/logos/GoAgentic.png', alt: 'Go Agentic Logo' },
   { src:'/logos/Iris2.png', alt:'Iris Logo'},
   { src:'/logos/NuyuAgency.png', alt:'Nuyu Agency Logo'},
   { src:'/logos/PLC.png', alt:'PLC Logo'},
-  { src:'/logos/Kuziko.png', alt:'Kuziko Logo'}
+  { src:'/logos/Kuziko.png', alt:'Kuziko Logo'},
+  { src: '/logos/GoAgentic.png', alt: 'Go Agentic Logo' }
   
 ]
 
@@ -147,6 +147,7 @@ h1 {
   animation: scroll 40s linear infinite;
   display: flex;
   width: calc(250px * 14);
+  gap: 2rem;
 }
 
 .no-slide-track{
@@ -155,14 +156,16 @@ h1 {
 }
 
 .slide {
+  display: flex;
+  align-items: center;
   height: 100px;
   width: 250px;
   object-fit: cover;
 }
 
 .images{
-  max-width: 100%;
-  max-height: 100%;
   
+  max-width: 100%;
+  max-height: 70%;
 }
 </style>
