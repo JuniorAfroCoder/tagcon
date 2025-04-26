@@ -147,7 +147,7 @@ h1 {
   animation: scroll 40s linear infinite;
   display: flex;
   width: calc(250px * 14);
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .no-slide-track{
