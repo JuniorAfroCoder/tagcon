@@ -238,7 +238,7 @@ const submitContactForm = async () => {
               class="shadow bg-orange-600 hover:bg-orange-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
               type="submit"
             >
-              Send Us A Message2
+              Send Us A Message
             </button>
           </div>
         </div>
