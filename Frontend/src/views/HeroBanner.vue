@@ -113,7 +113,7 @@ import CtaBtn from '@/components/CtaBtn.vue'
 }
 
 .top p {
-  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  font-size: clamp(1.8rem, 2.4vw, 3.4rem);
   font-family: 'Recharge', sans-serif;
   text-transform: uppercase;
   line-height: normal;

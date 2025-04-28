@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: tagcon-backend-python
+    runtime: python
+    buildCommand: ./build.sh
+    startCommand: gunicorn tagcon.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: DEBUG
+        value: False
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: sqlite3:///db.sqlite3  # For production, you should use PostgreSQL
+      - key: EMAIL_HOST
+        value: mail.ksquad.dev
+      - key: EMAIL_PORT
+        value: 465
+      - key: EMAIL_HOST_USER
+        value: tagcon@ksquad.dev
+      - key: EMAIL_HOST_PASSWORD
+        sync: false  # You'll set this in Render dashboard
+      - key: EMAIL_USE_SSL
+        value: true

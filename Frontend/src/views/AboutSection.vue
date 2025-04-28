@@ -72,7 +72,7 @@
 }
 #title {
   font-family: 'Recharge', 'Muller', sans-serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   line-height: normal;
 }

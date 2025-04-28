@@ -11,7 +11,8 @@ const partnersLogos = [
 ]
 
 const sponsorsLogos =[
-  { src:'/logos/Hogi.png', alt:'Hogi Logo'}
+  { src:'/logos/Hogi.png', alt:'Hogi Logo'}, 
+  { src:'/logos/Ustream.jpg', alt:'Ustream Zone'}
 ]
 
 </script>
