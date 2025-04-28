@@ -153,6 +153,7 @@ h1 {
 .no-slide-track{
   display:flex;
   justify-content: center;
+  align-items: center;
 }
 
 .slide {
@@ -164,7 +165,6 @@ h1 {
 }
 
 .images{
-  
   max-width: 100%;
   max-height: 70%;
 }
