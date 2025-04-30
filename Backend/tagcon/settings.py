@@ -44,6 +44,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'api.middlewares.DisableCSRF',
     'api.middlewares.ExceptionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'tagcon.urls'
