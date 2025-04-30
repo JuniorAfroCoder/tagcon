@@ -7,3 +7,6 @@
 **__pycache__
 
 /dist
+.htaccess
+passenger_wsgi.py
+stderr.log
