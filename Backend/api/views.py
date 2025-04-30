@@ -21,8 +21,8 @@ class ExhibitorViewSet(ExportMixin,SimplePostResponseMixin,viewsets.ModelViewSet
     serializer_class = ExhibitorSerializer
     permission_classes = [ReadOnlyRequiresAuth]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
-    filterset_fields = ['companyName', 'spaceNeeded']
-    search_fields = ['name', 'email', 'companyName', 'phoneNumber']
+    filterset_fields = ['company_name', 'space_needed']
+    search_fields = ['name', 'email', 'company_name', 'phone_number']
     export_fields = ['name', 'email', 'phone_number', 'company_name', 'company_description', 'space_needed', 'created_at']
     export_filename = 'exhibitors'
 
