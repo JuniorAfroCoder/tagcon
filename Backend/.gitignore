@@ -10,3 +10,4 @@
 .htaccess
 passenger_wsgi.py
 stderr.log
+/static/*
