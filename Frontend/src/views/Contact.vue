@@ -159,7 +159,7 @@ const submitContactForm = async () => {
               </g>
             </g>
           </svg>
-          <span class="font-[Avenir_Next_Roman] text-md">tagconvention@gmail.com</span>
+          <span class="font-[Avenir_Next_Roman] text-md">contact@tagcon.bi</span>
         </div>
       </div>
       <form

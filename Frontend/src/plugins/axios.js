@@ -1,26 +1,14 @@
 import axios from 'axios'
 
-<<<<<<< HEAD
 function baseUrl() {
-  let base_url = ''
-  let base_host = window.location.host.split(':')[0]
-  let locals = ['localhost', '127.0.0.1']
+  let base_url = ""
+  let base_host = window.location.host.split(":")[0]
+  let locals = ["localhost", "127.0.0.1"]
   if (locals.includes(base_host)) {
-    base_url = window.location.protocol + '//' + base_host + ':8000'
-=======
-function baseUrl(){
-    let base_url = ""
-    let base_host = window.location.host.split(":")[0]
-    let locals = ["localhost", "127.0.0.1"]
-    if(locals.includes(base_host)){
-      base_url = window.location.protocol+"//"+base_host+":8000"
-    }
-    //return base_url+'/api'
-    return "https://api.tagcon.bi/api"
->>>>>>> 0f5a9ad5bd556b329a0fc2652bc8d0a140fcf310
+    base_url = window.location.protocol + "//" + base_host + ":8000"
   }
   //return base_url+'/api'
-  return 'https://api.tagcon.ksquad.dev/api'
+  return "https://api.tagcon.ksquad.dev/api"
 }
 
 const apiClient = axios.create({
