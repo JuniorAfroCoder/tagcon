@@ -44,3 +44,13 @@ class Volunteer(models.Model):
     class Meta:
         db_table = 'tagcon_volunteers' 
 
+class Contact(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=200, default='TAGCON Get In Touch')
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = 'tagcon_contacts'
