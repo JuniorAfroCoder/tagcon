@@ -41,7 +41,7 @@ const sponsorsLogos =[
         <div class="mt-8 flex flex-wrap justify-center gap-4">
           <a
             class="group inline-block rounded-sm bg-gradient-to-r from-[#a8000b] to-[#f91622] p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
-            href="/Catégorie de Sponsor.pdf" data-aos="zoom-in" data-aos-delay="800" data-aos-duration="500" data-aos-easing="ease-in-back" download
+            href="/Sponsorship category.pdf" data-aos="zoom-in" data-aos-delay="800" data-aos-duration="500" data-aos-easing="ease-in-back" download
           > 
             <span
               class="font-[Avenir_Next_Roman] block rounded-xs px-8 py-3 text-sm font-medium group-hover:bg-transparent"
