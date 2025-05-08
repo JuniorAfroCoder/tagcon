@@ -11,7 +11,13 @@ import CtaBtn from '@/components/CtaBtn.vue'
     <div class="child-container">
       <div class="title-container">
         <span class="title" data-aos="fade-down" data-aos-duration="1500">TAG CON 2025</span>
-        <img src="/images/Hero-image.webp" data-aos="zoom-in" data-aos-duration="1000" alt="A guy wearing a VR Headset" srcset="" />
+        <img
+          src="/images/Hero-image.webp"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+          alt="A guy wearing a VR Headset"
+          srcset=""
+        />
       </div>
       <div class="cta-container text-white">
         <div class="top" data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">
@@ -20,8 +26,13 @@ import CtaBtn from '@/components/CtaBtn.vue'
             <span class="text-[#ff5722]">Convention </span>!
           </p>
         </div>
-        <div class="bottom" >
-          <div class="font-[Avenir_Next_Roman]" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="1500">
+        <div class="bottom">
+          <div
+            class="font-[Avenir_Next_Roman]"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            data-aos-delay="1500"
+          >
             <p class="text-center">In</p>
             <div class="py-4">
               <Countdown labelColor="white" deadline="2025-08-01 00:00:00" />
@@ -30,9 +41,27 @@ import CtaBtn from '@/components/CtaBtn.vue'
           </div>
 
           <div class="buttons">
-            <CtaBtn data-aos="fade-down" data-aos-delay="2200" data-aos-easing="ease-in" btnMessage="Register Now" url="#registration" />
-            <CtaBtn data-aos="fade-down" data-aos-delay="2600" data-aos-easing="ease-in" btnMessage="Sponsor Us" url="#registration" />
-            <CtaBtn data-aos="fade-down" data-aos-delay="3000" data-aos-easing="ease-in" btnMessage="Volunteer" url="#registration" />
+            <CtaBtn
+              data-aos="fade-down"
+              data-aos-delay="2200"
+              data-aos-easing="ease-in"
+              btnMessage="Register Now"
+              url="#registration"
+            />
+            <CtaBtn
+              data-aos="fade-down"
+              data-aos-delay="2600"
+              data-aos-easing="ease-in"
+              btnMessage="Sponsor Us"
+              url="#registration"
+            />
+            <CtaBtn
+              data-aos="fade-down"
+              data-aos-delay="3000"
+              data-aos-easing="ease-in"
+              btnMessage="Volunteer"
+              url="#registration"
+            />
           </div>
         </div>
       </div>
@@ -42,7 +71,6 @@ import CtaBtn from '@/components/CtaBtn.vue'
 </template>
 
 <style scoped>
-
 .down-arrow {
   opacity: 0;
   color: white;
@@ -55,13 +83,13 @@ import CtaBtn from '@/components/CtaBtn.vue'
   border-radius: 2px;
   animation: jumpInfinite 1.5s infinite;
 }
-.down-arrow .show{
-    opacity: 1;
-    transition: opacity 3s ease-in-out;
-    -webkit-transition: opacity 3s ease-in-out;
-    -moz-transition: opacity 3s ease-in-out;
-    -ms-transition: opacity 3s ease-in-out;
-    -o-transition: opacity 3s ease-in-out;
+.down-arrow .show {
+  opacity: 1;
+  transition: opacity 3s ease-in-out;
+  -webkit-transition: opacity 3s ease-in-out;
+  -moz-transition: opacity 3s ease-in-out;
+  -ms-transition: opacity 3s ease-in-out;
+  -o-transition: opacity 3s ease-in-out;
 }
 
 .down-arrow:after {

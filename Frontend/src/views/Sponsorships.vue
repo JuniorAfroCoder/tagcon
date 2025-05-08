@@ -2,23 +2,23 @@
 import Slider from '@/components/Slider.vue'
 
 const partnersLogos = [
-  { src:'/logos/Iris2.png', alt:'Iris Logo'},
   { src:'/logos/NuyuAgency.png', alt:'Nuyu Agency Logo'},
-  { src:'/logos/PLC.png', alt:'PLC Logo'},
+  { src:'/logos/Iris2.png', alt:'Iris Logo'},
   { src:'/logos/Kuziko.png', alt:'Kuziko Logo'},
-  { src: '/logos/GoAgentic.png', alt: 'Go Agentic Logo' }
-  
+  { src: '/logos/GoAgentic.png', alt: 'Go Agentic Logo' },
+  {src:'/logos/KSquad.png', alt:'KSquad Dev'}
 ]
 
 const sponsorsLogos =[
   { src:'/logos/Hogi.png', alt:'Hogi Logo'}, 
-  { src:'/logos/Ustream.jpg', alt:'Ustream Zone'}
+  { src:'/logos/Ustream.jpg', alt:'Ustream Zone'},
+  { src:'/logos/PLC.png', alt:'PLC Logo'}
 ]
 
 </script>
 
 <template>
-  <section id="sponsorships" class="overflow-visible bg-[#212121] text-white pb-4">
+  <section id="sponsorships" class="overflow-visible bg-[#212121] text-white mb-10">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 lg:flex-rows-1 lg:items-center">
       <div class="mx-auto max-w-3xl text-center">
         <h1 data-aos="fade-up"
@@ -41,12 +41,13 @@ const sponsorsLogos =[
         <div class="mt-8 flex flex-wrap justify-center gap-4">
           <a
             class="group inline-block rounded-sm bg-gradient-to-r from-[#a8000b] to-[#f91622] p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
-            href="/Catégorie de Sponsor.pdf" data-aos="zoom-in" data-aos-delay="800" data-aos-duration="500" data-aos-easing="ease-in-back" download
+            href="/Sponsorship category.pdf" data-aos="zoom-in" data-aos-delay="800" data-aos-duration="500" data-aos-easing="ease-in-back" download
           > 
             <span
               class="font-[Avenir_Next_Roman] block rounded-xs px-8 py-3 text-sm font-medium group-hover:bg-transparent"
             >
-              Download Sponsorship Package
+              Download Sponsorship Package    
+              
             </span>
           </a>
 
@@ -148,7 +149,7 @@ h1 {
   animation: scroll 40s linear infinite;
   display: flex;
   width: calc(250px * 14);
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .no-slide-track{
