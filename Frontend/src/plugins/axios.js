@@ -1,30 +1,29 @@
-
 import axios from 'axios'
 
-function baseUrl(){
-    let base_url = ""
-    let base_host = window.location.host.split(":")[0]
-    let locals = ["localhost", "127.0.0.1"]
-    if(locals.includes(base_host)){
-      base_url = window.location.protocol+"//"+base_host+":8000"
-    }
-    //return base_url+'/api'
-    return "https://api.tagcon.ksquad.dev/api"
+function baseUrl() {
+  let base_url = ''
+  let base_host = window.location.host.split(':')[0]
+  let locals = ['localhost', '127.0.0.1']
+  if (locals.includes(base_host)) {
+    base_url = window.location.protocol + '//' + base_host + ':8000'
   }
+  //return base_url+'/api'
+  return 'https://api.tagcon.ksquad.dev/api'
+}
 
 const apiClient = axios.create({
   baseURL: baseUrl(),
   timeout: 10000,
   headers: {
-    'Content-Type': 'application/json'
-  }
+    'Content-Type': 'application/json',
+  },
 })
 
 let isRefreshing = false
 let failedQueue = []
 
 const processQueue = (error, token = null) => {
-  failedQueue.forEach(prom => {
+  failedQueue.forEach((prom) => {
     if (error) {
       prom.reject(error)
     } else {
@@ -35,7 +34,7 @@ const processQueue = (error, token = null) => {
 }
 
 // Request interceptor to attach token
-apiClient.interceptors.request.use(config => {
+apiClient.interceptors.request.use((config) => {
   const token = localStorage.getItem('access_token')
   if (token) {
     config.headers.Authorization = `Bearer ${token}`
@@ -45,8 +44,8 @@ apiClient.interceptors.request.use(config => {
 
 // Response interceptor to handle token refresh
 apiClient.interceptors.response.use(
-  response => response,
-  async error => {
+  (response) => response,
+  async (error) => {
     const originalRequest = error.config
 
     if (error.response?.status === 401 && !originalRequest._retry) {
@@ -56,11 +55,11 @@ apiClient.interceptors.response.use(
         return new Promise((resolve, reject) => {
           failedQueue.push({ resolve, reject })
         })
-          .then(token => {
+          .then((token) => {
             originalRequest.headers.Authorization = `Bearer ${token}`
             return apiClient(originalRequest)
           })
-          .catch(err => Promise.reject(err))
+          .catch((err) => Promise.reject(err))
       }
 
       isRefreshing = true
@@ -68,8 +67,8 @@ apiClient.interceptors.response.use(
       const refreshToken = localStorage.getItem('refresh_token')
 
       try {
-        const { data } = await axios.post(baseUrl()+'/refresh/', {
-          refresh: refreshToken
+        const { data } = await axios.post(baseUrl() + '/refresh/', {
+          refresh: refreshToken,
         })
 
         const newToken = data.access
@@ -91,7 +90,7 @@ apiClient.interceptors.response.use(
     }
 
     return Promise.reject(error)
-  }
+  },
 )
 
 export default apiClient

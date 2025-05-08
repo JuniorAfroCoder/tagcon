@@ -21,8 +21,7 @@ import Sponsorships from './views/Sponsorships.vue'
 </template>
 
 <style scoped>
-body{
+body {
   overflow: hidden;
 }
-
 </style>

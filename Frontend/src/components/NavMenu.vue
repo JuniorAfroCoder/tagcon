@@ -16,13 +16,7 @@ const isOpen = ref(hidden)
         <div class="md:flex md:items-center md:gap-16">
           <a class="block text-orange dark:text-orange" href="#">
             <span class="sr-only">Home</span>
-            <img
-              src="/images/logo.png"
-              alt="Tag Con Logo"
-              srcset=""
-              width="100px"
-              height="100px"
-            />
+            <img src="/images/logo.png" alt="Tag Con Logo" srcset="" width="100px" height="100px" />
           </a>
         </div>
 
@@ -181,7 +175,7 @@ const isOpen = ref(hidden)
 <style scoped>
 header {
   font-family: 'Avenir Next Roman', sans-serif;
-  background-color: #212121 ;
+  background-color: #212121;
 }
 
 a {
@@ -191,7 +185,4 @@ a {
 a:hover {
   color: #a8000b;
 }
-
-  
-
 </style>

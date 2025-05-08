@@ -1,7 +1,7 @@
 @import './base.css';
 @import 'tailwindcss';
 @import 'animate.css';
-@import "flowbite/src/themes/default";
+@import 'flowbite/src/themes/default';
 
 @plugin "flowbite/plugin";
 

@@ -16,17 +16,25 @@
     </div>
     <div class="text-container">
       <div class="title-container">
-        <p id="title" data-aos="fade-right"
-        data-aos-duration="800"
-     data-aos-offset="200"
-     data-aos-easing="ease-in-sine" >What is TAG Convention ?</p>
+        <p
+          id="title"
+          data-aos="fade-right"
+          data-aos-duration="800"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+        >
+          What is TAG Convention ?
+        </p>
       </div>
       <div class="svg-container">
-        <p id="info-text" data-aos="fade-right"
-     data-aos-offset="200"
-     data-aos-duration="1000"
-     data-aos-delay="300"
-     data-aos-easing="ease-in-sine">
+        <p
+          id="info-text"
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-duration="1000"
+          data-aos-delay="300"
+          data-aos-easing="ease-in-sine"
+        >
           The TAG Convention (Tech-Animation-Gaming Convention) is
           <span>Burundi's premier event </span>bringing together enthusiasts, creators, and industry
           leaders in technology, gaming, and animation. It's a platform for <span>innovation</span>,

@@ -1,5 +1,5 @@
 <script setup>
-import { ref,inject } from 'vue'
+import { ref, inject } from 'vue'
 const axios = inject('axios')
 
 const contactFormData = ref({
@@ -7,45 +7,49 @@ const contactFormData = ref({
   lastName: '',
   email: '',
   message: '',
-});
+})
 
 const submitContactForm = async () => {
   try {
     const response = await axios.post('/contact/', contactFormData.value)
-    successMessage2.value = 'Form submitted successfully!';
-    errorMessage2.value = '';
-    contactFormData.value = { firstName: '', email: '', lastName:'', message:''};
+    successMessage2.value = 'Form submitted successfully!'
+    errorMessage2.value = ''
+    contactFormData.value = { firstName: '', email: '', lastName: '', message: '' }
   } catch (error) {
-    errorMessage.value = 'There was a problem submitting the form.';
-    console.error('Error:', error);
+    errorMessage.value = 'There was a problem submitting the form.'
+    console.error('Error:', error)
   }
-};
-
-
+}
 </script>
 <template>
-  <div id="contact" class="bg-[#212121] py-8 px-4 mb-30 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+  <div id="contact" class="bg-[#212121] py-10 px-4 mb-30 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-        <h2
-          class="font-[Recharge] uppercase mb-4 text-3xl tracking-tight font-extrabold sm:text-5xl text-white dark:text-white"
-          data-aos="fade-up" data-aos-duration="1000" 
-        >
-          Get In <span>Touch</span>
-        </h2>
-        <p
-          class="font-[Avenir_Next_Roman] font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-white"
-          data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"
-        >
-          Your opinion matters to us. Feel free to drop us a message.
-        </p>
-      </div>
+      <h2
+        class="font-[Recharge] uppercase mb-4 text-3xl tracking-tight font-extrabold sm:text-5xl text-white dark:text-white"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        Get In <span>Touch</span>
+      </h2>
+      <p
+        class="font-[Avenir_Next_Roman] font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-white"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="300"
+      >
+        Your opinion matters to us. Feel free to drop us a message.
+      </p>
+    </div>
 
     <div class="grid grid-cols-1 md:grid-cols-12">
-      <div  data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200" class="bg-[#383838] md:col-span-4 p-10 text-white">
+      <div
+        data-aos="fade-right"
+        data-aos-duration="1200"
+        data-aos-delay="200"
+        class="bg-[#383838] md:col-span-4 p-10 text-white"
+      >
         <p class="font-[African_Culture] mt-4 text-sm leading-7 uppercase">Have Questions ?</p>
-        <h3 class="font-[Recharge] text-xl sm:text-4xl leading-none tracking-tight">
-          Reach out
-        </h3>
+        <h3 class="font-[Recharge] text-xl sm:text-4xl leading-none tracking-tight">Reach out</h3>
         <p class="font-[Avenir_Next_Roman] mt-4 leading-7 text-gray-200">
           Do you have a question or need a clarification? Visit us, send us an email, or complete
           this form to notify us of any inquiry, we will respond as soon as possible.
@@ -158,7 +162,13 @@ const submitContactForm = async () => {
           <span class="font-[Avenir_Next_Roman] text-md">tagconvention@gmail.com</span>
         </div>
       </div>
-      <form  data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200" @submit="submitContactForm" class="font-[Avenir_Next_Roman] md:col-span-8 p-10">
+      <form
+        data-aos="fade-left"
+        data-aos-duration="1200"
+        data-aos-delay="200"
+        @submit="submitContactForm"
+        class="font-[Avenir_Next_Roman] md:col-span-8 p-10"
+      >
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
@@ -185,7 +195,6 @@ const submitContactForm = async () => {
               Last Name
             </label>
             <input
-
               class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-last-name"
               type="text"
@@ -226,11 +235,12 @@ const submitContactForm = async () => {
               Your Message
             </label>
             <textarea
-            id="text-area"
+              id="text-area"
               rows="10"
               name="Message"
               v-model="contactFormData.message"
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              required
             ></textarea>
           </div>
           <div class="flex justify-end w-full mt-3 px-3">
