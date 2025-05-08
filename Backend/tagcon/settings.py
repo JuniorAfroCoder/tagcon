@@ -110,11 +110,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
 
-EMAIL_HOST = "mail.ksquad.dev"
+EMAIL_HOST = "mail.tagcon.bi"
 EMAIL_PORT = 465
-EMAIL_HOST_USER = "tagcon@ksquad.dev"
-EMAIL_HOST_PASSWORD = "ZlEmw$tY0i8("
-DEFAULT_FROM_EMAIL = "tagcon@ksquad.dev"
+EMAIL_HOST_USER = "contact@tagcon.bi"
+EMAIL_HOST_PASSWORD = "tagconvention2025!"
+DEFAULT_FROM_EMAIL = "contact@tagcon.bi"
 EMAIL_USE_SSL = True
 
 

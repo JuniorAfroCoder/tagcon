@@ -47,6 +47,17 @@ class VolunteerViewSet(ExportMixin,SimplePostResponseMixin,viewsets.ModelViewSet
     export_fields = ['name', 'email', 'phone_number', 'age', 'sex', 'created_at']
     export_filename = 'volunteers'
 
+class ContactViewSet(ExportMixin,SimplePostResponseMixin,viewsets.ModelViewSet):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+    permission_classes = [ReadOnlyRequiresAuth]
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name', 'email']
+    search_fields = ['name', 'email', 'subject', 'message']
+    export_fields = ['name', 'email', 'subject', 'message', 'created_at']
+    export_filename = 'contacts'
+
+
 
 class ContactView(APIView):
     def post(self, request):
@@ -57,7 +68,7 @@ class ContactView(APIView):
 
         full_message = f"Message from {name} <{email}>:\n\n{message}"
 
-        send_mail(subject, full_message, email, ['tagcon@ksquad.dev'])
+        send_mail(subject, full_message, email, ['contact@tagcon.bi'])
         send_mail(
             subject=f"[TAGCON : 2025] ",
             message=f"Vôtre message a été envoyé avec succès. Nous vous contacterons dès que possible.",
@@ -65,4 +76,12 @@ class ContactView(APIView):
             recipient_list=[email],
             fail_silently=False,
         )
+
+        Contact.objects.create(
+            name=name,
+            email=email,
+            subject=subject,
+            message=message
+        )
+
         return Response({'status': 'ok'}, status=status.HTTP_200_OK)
