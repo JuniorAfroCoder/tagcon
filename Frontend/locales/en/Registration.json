@@ -1,0 +1,24 @@
+{
+    "registrationTitle":"READY TO JOIN US ?",
+    "registrationDescription":"Be part of the action by registering for the TAG Convention. Will you be an attendee, exhibitor, or sponsor, we have a place for everyone!",
+    "form":{
+        "exhibitor":{
+            "title":"Register as Exhibitor",
+            "fields":{
+                "contactName":"Contact Full Name",
+                "email":"Email",
+                "company":"Company Name",
+                "phone":"Phone Number",
+                "desc":"What is your business about ?",
+                "space":"How much space will your business need ?",
+                "submit":"Submit"
+            }
+        },
+        "volunteer":{
+            "title":"Register as Volunteer"
+        },
+        "attendee":{
+            "title":"Register as Attendee"
+        }
+    }
+}

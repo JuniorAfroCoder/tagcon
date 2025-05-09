@@ -197,7 +197,7 @@ import CtaBtn from '@/components/CtaBtn.vue'
   .buttons {
     display: flex;
     flex-direction: row;
-    gap: 4rem;
+    gap: 2em;
   }
 }
 </style>

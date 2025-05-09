@@ -608,4 +608,8 @@ const submitAttendeeFormDjango = async () => {
 .error {
   color: red;
 }
+
+button{
+  cursor: pointer;
+}
 </style>

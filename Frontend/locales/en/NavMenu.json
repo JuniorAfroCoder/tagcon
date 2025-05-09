@@ -1,0 +1,12 @@
+{
+    "about": "About",
+    "events": "Events",
+    "registration": "Registration",
+    "partnerships":"Partnerships",
+    "team":"Team",
+    "contact": "Contact",
+    "cta":{
+        "join":"Join Us"
+    }
+
+}

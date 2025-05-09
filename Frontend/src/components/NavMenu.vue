@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import CtaBtn from './CtaBtn.vue'
+import Translation from './Translation.vue'
 
 const isHidden = ref(true)
 const hidden = !isHidden
@@ -84,6 +85,7 @@ const isOpen = ref(hidden)
           <div class="sm:flex sm:gap-4">
             <CtaBtn url="#registration" btnMessage="Join Us" />
           </div>
+          <Translation />
 
           <div class="block md:hidden">
             <button
@@ -173,6 +175,8 @@ const isOpen = ref(hidden)
 </template>
 
 <style scoped>
+
+
 header {
   font-family: 'Avenir Next Roman', sans-serif;
   background-color: #212121;
