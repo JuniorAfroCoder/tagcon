@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue'
 import Slider from '@/components/Slider.vue'
 
 const partnersLogos = [
@@ -15,6 +16,7 @@ const sponsorsLogos =[
   { src:'/logos/PLC.png', alt:'PLC Logo'}
 ]
 
+const isHidden = ref(true)
 </script>
 
 <template>
@@ -38,30 +40,78 @@ const sponsorsLogos =[
           </span>
         </p>
 
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
-          <a
-            class="group inline-block rounded-sm bg-gradient-to-r from-[#a8000b] to-[#f91622] p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
-            href="/Sponsorship category.pdf" data-aos="zoom-in" data-aos-delay="800" data-aos-duration="500" data-aos-easing="ease-in-back" download
-          > 
-            <span
-              class="font-[Avenir_Next_Roman] block rounded-xs px-8 py-3 text-sm font-medium group-hover:bg-transparent"
-            >
-              Download Sponsorship Package    
-              
-            </span>
-          </a>
+       <div class="mt-8 inline-block justify-center gap-6 md:flex md:flex-row">
+    <div class="mb-4">
+      <button
+        id="dropdownDefaultButton"
+        data-dropdown-toggle="dropdown"
+        class="h-12 group text-white inline-flex items-center gap-2 rounded-sm bg-gradient-to-r from-[#a8000b] to-[#f91622] px-3 hover:text-white focus:ring-3 focus:outline-hidden"
+        type="button"
+        @click="isHidden = !isHidden"
+      >
+        <span
+          class="font-[Avenir_Next_Roman] block rounded-xs px-8 py-3 text-sm font-medium group-hover:bg-transparent"
+        >
+          Download Sponsorship Package
+        </span>
+        <svg
+          class="w-2.5 h-2.5 ms-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 10 6"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 1 4 4 4-4"
+          />
+        </svg>
+      </button>
 
-          <a
-            class="group inline-block rounded-sm bg-gradient-to-r from-[#a8000b] to-[#f91622] p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
-            href="mailto:tagconvention@gmail.com" data-aos="zoom-in" data-aos-delay="1400" data-aos-duration="500" data-aos-easing="ease-in-back"
-          >
-            <span
-              class="font-[Avenir_Next_Roman] block rounded-xs bg-[#28282B] px-8 py-3 text-sm font-medium group-hover:bg-transparent"
+      <!-- Dropdown menu -->
+      <div
+        id="dropdown"
+        :class="{ hidden: isHidden }"
+        class="bg-[#212121] z-10  divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700"
+      >
+        <ul class="py-2 text-sm text-white" aria-labelledby="dropdownDefaultButton">
+          <li>
+            <a
+              href="/Sponsorship category.pdf"
+              class="text-center font-[Avenir_Next_Roman] block px-4 py-2 hover:bg-[#a8000b] focus:bg-[#a8000b]"
+              download >English</a
             >
-              Contact Us For Opportunities
-            </span>
-          </a>
-        </div>
+          </li>
+          <li>
+            <a
+              href="/Catégorie de Sponsor.pdf"
+              class="text-center font-[Avenir_Next_Roman] block px-4 py-2 hover:bg-[#a8000b] focus:bg-[#a8000b]"
+              download>French</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <a
+        class="h-12 group inline-block rounded-sm bg-gradient-to-r from-[#a8000b] to-[#f91622] p-[2px] text-white focus:ring-3 focus:outline-hidden"
+        href="mailto:tagconvention@gmail.com"
+        data-aos="zoom-in"
+        data-aos-delay="1400"
+        data-aos-duration="500"
+        data-aos-easing="ease-in-back"
+      >
+        <span
+          class="font-[Avenir_Next_Roman] block rounded-xs bg-[#28282B] px-8 py-3 text-sm font-medium group-hover:bg-transparent"
+        >
+          Contact Us For Opportunities
+        </span>
+      </a>
+    </div>
+  </div>
       </div>
       <div class="mt-20">
         <h3 class="font-[African_Culture] uppercase text-center text-3xl mb-5">
