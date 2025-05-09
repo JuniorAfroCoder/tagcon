@@ -61,12 +61,13 @@ class ContactViewSet(ExportMixin,SimplePostResponseMixin,viewsets.ModelViewSet):
 
 class ContactView(APIView):
     def post(self, request):
-        name = request.data.get('name')
         email = request.data.get('email')
-        subject = request.data.get('subject', 'TAGCON Get In Touch')
+        first_name = request.data.get('first_name')
+        last_name = request.data.get('last_name')
         message = request.data.get('message')
+        subject = request.data.get('subject', 'TAGCON Get In Touch')
 
-        full_message = f"Message from {name} <{email}>:\n\n{message}"
+        full_message = f"Message from {first_name} {last_name} <{email}>:\n\n{message}"
 
         send_mail(subject, full_message, email, ['contact@tagcon.bi'])
         send_mail(
@@ -78,10 +79,11 @@ class ContactView(APIView):
         )
 
         Contact.objects.create(
-            name=name,
-            email=email,
-            subject=subject,
-            message=message
+            email = email,
+            first_name = first_name,
+            last_name = last_name,
+            message = message,
+            subject = subject,
         )
 
         return Response({'status': 'ok'}, status=status.HTTP_200_OK)

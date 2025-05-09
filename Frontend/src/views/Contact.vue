@@ -166,7 +166,7 @@ const submitContactForm = async () => {
         data-aos="fade-left"
         data-aos-duration="1200"
         data-aos-delay="200"
-        @submit="submitContactForm"
+        @submit.prevent="submitContactForm"
         class="font-[Avenir_Next_Roman] md:col-span-8 p-10"
       >
         <div class="flex flex-wrap -mx-3 mb-6">

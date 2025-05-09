@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 function baseUrl() {
+<<<<<<< HEAD
   let base_url = ""
   let base_host = window.location.host.split(":")[0]
   let locals = ["localhost", "127.0.0.1"]
@@ -9,6 +10,16 @@ function baseUrl() {
   }
   //return base_url+'/api'
   return "http://api.tagcon.bi/api"
+=======
+  // let base_url = ""
+  // let base_host = window.location.host.split(":")[0]
+  // let locals = ["localhost", "127.0.0.1"]
+  // if (locals.includes(base_host)) {
+  //   base_url = window.location.protocol + "//" + base_host + ":8000"
+  // }
+  // return base_url+'/api'
+  return "https://api.tagcon.bi/api"
+>>>>>>> 79d21a4abe10ed43041075129c2cbf5b8bde7814
 }
 
 const apiClient = axios.create({
