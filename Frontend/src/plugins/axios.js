@@ -8,7 +8,7 @@ function baseUrl() {
     base_url = window.location.protocol + "//" + base_host + ":8000"
   }
   //return base_url+'/api'
-  return "https://api.tagcon.ksquad.dev/api"
+  return "https://api.tagcon.bi/api"
 }
 
 const apiClient = axios.create({
