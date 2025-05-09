@@ -175,8 +175,6 @@ const isOpen = ref(hidden)
 </template>
 
 <style scoped>
-
-
 header {
   font-family: 'Avenir Next Roman', sans-serif;
   background-color: #212121;

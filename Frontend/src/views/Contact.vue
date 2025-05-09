@@ -269,7 +269,7 @@ svg {
 h2 span {
   color: #ff5722;
 }
-button{
-  cursor:pointer;
+button {
+  cursor: pointer;
 }
 </style>
