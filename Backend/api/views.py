@@ -47,8 +47,9 @@ class VolunteerViewSet(ExportMixin,SimplePostResponseMixin,viewsets.ModelViewSet
     export_fields = ['name', 'email', 'phone_number', 'age', 'sex', 'created_at']
     export_filename = 'volunteers'
 
-class ContactViewSet(ExportMixin,SimplePostResponseMixin,viewsets.ModelViewSet):
+class ContactViewSet(ExportMixin,viewsets.ModelViewSet):
     queryset = Contact.objects.all()
+    http_method_names = ['get', 'head', 'options']
     serializer_class = ContactSerializer
     permission_classes = [ReadOnlyRequiresAuth]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
