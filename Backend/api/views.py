@@ -52,9 +52,9 @@ class ContactViewSet(ExportMixin,SimplePostResponseMixin,viewsets.ModelViewSet):
     serializer_class = ContactSerializer
     permission_classes = [ReadOnlyRequiresAuth]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
-    filterset_fields = ['name', 'email']
-    search_fields = ['name', 'email', 'subject', 'message']
-    export_fields = ['name', 'email', 'subject', 'message', 'created_at']
+    filterset_fields = ['first_name','last_name', 'email']
+    search_fields = ['first_name','last_name', 'email', 'subject', 'message']
+    export_fields = ['first_name','last_name', 'email', 'subject', 'message', 'created_at']
     export_filename = 'contacts'
 
 
