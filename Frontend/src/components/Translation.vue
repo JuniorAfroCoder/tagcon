@@ -1,7 +1,7 @@
 <template>
   <div class="translate-wrapper">
     <!-- Custom Trigger Button -->
-    <button @click="toggleMenu" class="translate-button">🌍 {{ selectedLanguage }}</button>
+    <button @click="toggleMenu" class="translate-button">{{ selectedLanguage }}</button>
 
     <!-- Custom Language Dropdown -->
     <div v-if="showMenu" class="language-menu">
@@ -71,7 +71,7 @@ export default {
 }
 
 .translate-button {
-  padding: 8px 16px;
+  padding: 8px 12px;
   background-image: linear-gradient(to right, #a8000b, #f91622);
   color: white;
   border: none;

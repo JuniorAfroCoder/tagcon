@@ -82,7 +82,7 @@ const isOpen = ref(hidden)
         </div>
 
         <div class="flex items-center gap-4">
-          <div class="sm:flex sm:gap-4">
+          <div class="sm:flex">
             <CtaBtn url="#registration" btnMessage="Join Us" />
           </div>
           <Translation />

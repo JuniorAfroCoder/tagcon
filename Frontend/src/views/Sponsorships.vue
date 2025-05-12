@@ -107,7 +107,7 @@ const isHidden = ref(true)
           <div>
             <a
               class="h-12 group inline-block rounded-sm bg-gradient-to-r from-[#a8000b] to-[#f91622] p-[2px] text-white focus:ring-3 focus:outline-hidden"
-              href="mailto:tagconvention@gmail.com"
+              href="mailto:sponsorships@tagcon.bi"
               data-aos="zoom-in"
               data-aos-delay="1400"
               data-aos-duration="500"

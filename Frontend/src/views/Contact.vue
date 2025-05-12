@@ -2,6 +2,9 @@
 import { ref, inject } from 'vue'
 const axios = inject('axios')
 
+const successMessage2 = ref('')
+const errorMessage2= ref('')
+
 const contactFormData = ref({
   firstName: '',
   lastName: '',
@@ -16,7 +19,7 @@ const submitContactForm = async () => {
     errorMessage2.value = ''
     contactFormData.value = { firstName: '', email: '', lastName: '', message: '' }
   } catch (error) {
-    errorMessage.value = 'There was a problem submitting the form.'
+    errorMessage2.value = 'There was a problem submitting the form.'
     console.error('Error:', error)
   }
 }
