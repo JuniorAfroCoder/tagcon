@@ -14,7 +14,7 @@ const contactFormData = ref({
 
 const submitContactForm = async () => {
   try {
-    const response = await axios.post('/contact/', contactFormData.value)
+    const response = await axios.post('https://api.tagcon.bi/api/contact/', contactFormData.value)
     successMessage2.value = 'Form submitted successfully!'
     errorMessage2.value = ''
     contactFormData.value = { firstName: '', email: '', lastName: '', message: '' }
