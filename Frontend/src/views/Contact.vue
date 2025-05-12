@@ -248,7 +248,7 @@ const submitContactForm = async () => {
               class="shadow bg-orange-600 hover:bg-orange-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
               type="submit"
             >
-              Send Us A Message
+              Send us a message
             </button>
           </div>
         </div>
@@ -268,5 +268,8 @@ svg {
 
 h2 span {
   color: #ff5722;
+}
+button {
+  cursor: pointer;
 }
 </style>

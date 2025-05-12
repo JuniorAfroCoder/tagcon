@@ -6,6 +6,7 @@ const firstFormVisible = ref(false)
 const secondFormVisible = ref(false)
 const thirdFormVisible = ref(false)
 const djangoBackend = ref(true)
+const isSubmitting = ref(false)
 
 const axios = inject('axios')
 
@@ -57,6 +58,7 @@ const submitExhibitorForm = async () => {
 
       const data = await response.json()
       successMessage.value = 'Form submitted successfully!'
+
       errorMessage.value = ''
       exhibitorsFormData.value = {
         name: '',
@@ -156,21 +158,27 @@ const submitAttendeeForm = async () => {
 //form submitting on djangoBackend
 
 const submitExhibitorFormDjango = async () => {
+  isSubmitting.value = true
   try {
     const response = await axios.post(
       'https://api.tagcon.bi/api/exhibitors/',
       exhibitorsFormData.value,
     )
     successMessage.value = 'Form submitted successfully!'
+
     errorMessage.value = ''
     attendeeFormData.value = { name: '', email: '', phoneNumber: '', age: '', sex: 'sex' } // Reset form
   } catch (error) {
     errorMessage.value = 'There was a problem submitting the form.'
     console.error('Error:', error)
+  } finally {
+    isSubmitting.value = false
+    console.log(isSubmitting.value)
   }
 }
 
 const submitVolunteerFormDjango = async () => {
+  isSubmitting.value = true
   try {
     const response = await axios.post(
       'https://api.tagcon.bi/api/volunteers/',
@@ -182,21 +190,29 @@ const submitVolunteerFormDjango = async () => {
   } catch (error) {
     errorMessage.value = 'There was a problem submitting the form.'
     console.error('Error:', error)
+  } finally {
+    isSubmitting.value = false
+    console.log(isSubmitting.value)
   }
 }
 
 const submitAttendeeFormDjango = async () => {
+  isSubmitting.value = true
   try {
     const response = await axios.post(
       'https://api.tagcon.bi/api/attendees/',
       attendeeFormData.value,
     )
+    console.log(isSubmitting.value)
     successMessage3.value = 'Form submitted successfully!'
     errorMessage3.value = ''
     attendeeFormData.value = { name: '', email: '', phoneNumber: '', age: '', sex: 'sex' } // Reset form
   } catch (error) {
     errorMessage.value = 'There was a problem submitting the form.'
     console.error('Error:', error)
+  } finally {
+    isSubmitting.value = false
+    console.log(isSubmitting.value)
   }
 }
 </script>
@@ -262,7 +278,7 @@ const submitAttendeeFormDjango = async () => {
                 v-if="firstFormVisible"
                 class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
               >
-                <form @submit.prevent="submitExhibitorForm" class="max-w-md mx-auto">
+                <form @submit.prevent="submitExhibitorFormDjango" class="max-w-md mx-auto">
                   <div class="relative z-0 w-full mb-5 group">
                     <input
                       type="name"
@@ -337,9 +353,34 @@ const submitAttendeeFormDjango = async () => {
 
                   <button
                     type="submit"
+                    :disabled="isSubmitting"
+                    :class="{ 'opacity-50 cursor-not-allowed': isSubmitting }"
                     class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-orange-500 dark:hover:bg-orange-600 dark:focus:ring-orange-700"
                   >
-                    Submit
+                    <span v-if="isSubmitting">
+                      <svg
+                        class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          class="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          stroke-width="4"
+                        ></circle>
+                        <path
+                          class="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                      </svg>
+                      Processing...
+                    </span>
+                    <span v-else>Submit</span>
                   </button>
                   <p v-if="successMessage" class="success">{{ successMessage }}</p>
                   <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
@@ -380,7 +421,7 @@ const submitAttendeeFormDjango = async () => {
                 v-if="secondFormVisible"
                 class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
               >
-                <form @submit.prevent="submitVolunteerForm" class="max-w-md mx-auto">
+                <form @submit.prevent="submitVolunteerFormDjango" class="max-w-md mx-auto">
                   <div class="relative z-0 w-full mb-5 group">
                     <input
                       type="name"
@@ -456,9 +497,34 @@ const submitAttendeeFormDjango = async () => {
 
                   <button
                     type="submit"
+                    :disabled="isSubmitting"
+                    :class="{ 'opacity-50 cursor-not-allowed': isSubmitting }"
                     class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-orange-500 dark:hover:bg-orange-600 dark:focus:ring-orange-700"
                   >
-                    Submit
+                    <span v-if="isSubmitting">
+                      <svg
+                        class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          class="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          stroke-width="4"
+                        ></circle>
+                        <path
+                          class="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                      </svg>
+                      Processing...
+                    </span>
+                    <span v-else>Submit</span>
                   </button>
                   <p v-if="successMessage2" class="success">{{ successMessage2 }}</p>
                   <p v-if="errorMessage2" class="error">{{ errorMessage2 }}</p>
@@ -498,7 +564,7 @@ const submitAttendeeFormDjango = async () => {
                 v-if="thirdFormVisible"
                 class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
               >
-                <form @submit.prevent="submitAttendeeForm" class="max-w-md mx-auto">
+                <form @submit.prevent="submitAttendeeFormDjango" class="max-w-md mx-auto">
                   <div class="relative z-0 w-full mb-5 group">
                     <input
                       type="name"
@@ -570,9 +636,34 @@ const submitAttendeeFormDjango = async () => {
 
                   <button
                     type="submit"
+                    :disabled="isSubmitting"
+                    :class="{ 'opacity-50 cursor-not-allowed': isSubmitting }"
                     class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-orange-500 dark:hover:bg-orange-600 dark:focus:ring-orange-700"
                   >
-                    Submit
+                    <span v-if="isSubmitting">
+                      <svg
+                        class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          class="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          stroke-width="4"
+                        ></circle>
+                        <path
+                          class="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                      </svg>
+                      Processing...
+                    </span>
+                    <span v-else>Submit</span>
                   </button>
                   <p v-if="successMessage3" class="success">{{ successMessage3 }}</p>
                   <p v-if="errorMessage3" class="error">{{ errorMessage3 }}</p>
@@ -607,5 +698,9 @@ const submitAttendeeFormDjango = async () => {
 }
 .error {
   color: red;
+}
+
+button {
+  cursor: pointer;
 }
 </style>

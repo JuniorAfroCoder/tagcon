@@ -1,0 +1,25 @@
+{
+    "highlightsTitle":"WHAT'S HAPPENING AT TAG CONVENTION 2025 ?",
+    "cards":{
+        "foodAndDrinks":{
+            "title":"FOOD AND DRINK STALLS",
+            "description":"Come taste the variety of food from different cultures and drinks of all kinds."
+        },
+        "interactiveExhibitions":{
+            "title":"INTERACTIVE EXHIBITIONS",
+            "description": "Explore cutting-edge technologies and innovative solutions by Burundian startups."
+        },
+        "animeScreenings":{
+            "title": "ANIME SCREENINGS",
+            "description":"Explore popular Japanese animations through dedicated movie-moments."
+        },
+        "gamingTournaments":{
+            "title":"GAMING TOURNAMENTS",
+            "description":"Participate in competitive gaming events for amateurs and pros alike."
+        },
+        "panelDiscussions":{
+            "title":"PANEL DISCUSSIONS",
+            "description":"Hear from industry experts in technology, gaming, and animation worldwide."
+        }
+    }
+}
